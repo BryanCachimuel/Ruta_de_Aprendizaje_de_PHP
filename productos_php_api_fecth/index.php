@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-header">Productos</div>
                     <div class="card-body">
-                        <form action="" method="POST" id="formulario">
+                        <form action="" method="POST" id="formulario" autocomplete="off">
                             <div class="form-group">
                                 <label for="codigo">Código:</label>
                                 <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Código del producto">
@@ -63,7 +63,7 @@
     </div>
 
     <!-- haciendo el llamado al archivo js -->
-    <script src="assets/script_fecth.js"></script>
+    <script src="./assets/script_fecth.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!-- sweetalert2 -->
