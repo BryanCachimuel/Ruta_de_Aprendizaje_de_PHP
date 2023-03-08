@@ -34,3 +34,17 @@ registrar.addEventListener("click", () => {
       }
     });
 });
+
+function Editar(id) {
+    fetch("editar.php", {
+        method: "POST",
+        body: id
+    }).then(response => response.json()).then(response => {
+        idp.value = response.id;
+        codigo.value = response.codigo;
+        producto.value = response.producto;
+        precio.value = response.precio;
+        cantidad.value = response.cantidad;
+        registrar.value = "Actualizar"
+    })
+}
