@@ -20,6 +20,7 @@
                         <form action="" method="POST" id="formulario" autocomplete="off">
                             <div class="form-group">
                                 <label for="codigo">Código:</label>
+                                <input type="hidden" name="idp" id="idp">
                                 <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Código del producto">
                             </div>
                             <div class="form-group">
