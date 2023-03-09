@@ -79,3 +79,12 @@ function Editar(id) {
         registrar.value = "Actualizar"
     })
 }
+
+buscar.addEventListener("keyup", () => {
+  const valor = buscar.value;
+  if (valor == "") {
+      ListarProductos();
+  }else{
+      ListarProductos(valor);
+  }
+});
