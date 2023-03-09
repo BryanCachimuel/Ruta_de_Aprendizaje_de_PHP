@@ -6,7 +6,7 @@
 */
 ListarProductos();
 function ListarProductos(busqueda) {
-  fetch("listar.php", {
+  fetch("/productos_php_api_fecth/src/listar.php", {
     method: "POST",
     body: busqueda,
   })
@@ -46,7 +46,7 @@ function Eliminar(id) {
       cancelButtonText: 'NO'
   }).then((result) => {
       if (result.isConfirmed) {
-          fetch("eliminar.php", {
+          fetch("/productos_php_api_fecth/src/eliminar.php", {
               method: "POST",
               body: id
           }).then(response => response.text()).then(response => {
@@ -67,7 +67,7 @@ function Eliminar(id) {
 }
 
 function Editar(id) {
-    fetch("editar.php", {
+    fetch("/productos_php_api_fecth/src/editar.php", {
         method: "POST",
         body: id
     }).then(response => response.json()).then(response => {
