@@ -42,6 +42,16 @@
                 </div>
             </div>
             <div class="col-lg-8">
+            <div class="row">
+                    <div class="col-lg-6 ml-auto">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <label for="buscra">Buscar:</label>
+                                <input type="text" name="buscar" id="buscar" placeholder="Buscar..." class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <table class="table table-hover table-responsive">
                     <thead class="bg-dark text-white text-center">
                         <tr>
