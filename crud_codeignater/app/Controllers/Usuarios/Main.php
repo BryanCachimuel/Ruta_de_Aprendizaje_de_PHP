@@ -11,5 +11,9 @@ class Main extends Controller {
         print_r($usuarioModel->listarRegistros());
     }
 
+    public function delete(){
+        $usuarioModel = new UsuarioModel();
+        $usuarioModel->eliminarUsuario($id);
+    }
 
 }
