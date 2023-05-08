@@ -103,6 +103,45 @@
       </div><!-- br-header-right -->
     </div><!-- br-header -->
     
+    <!-- ########## START: MAIN PANEL ########## -->
+    <div class="br-mainpanel">
+      <div class="br-pageheader pd-y-15 pd-l-20">
+        <nav class="breadcrumb pd-0 mg-0 tx-12">
+          <a class="breadcrumb-item" href="index.html">Mantenimiento</a>
+          <span class="breadcrumb-item active">Productos</span>
+        </nav>
+      </div><!-- br-pageheader -->
+      <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
+        <h4 class="tx-gray-800 mg-b-5">Productos</h4>
+        <p class="mg-b-0">Desde esta Ventana podrá dar Mantenimiento a los Productos</p>
+      </div>
+
+      <div class="br-pagebody">
+
+        <div class="br-section-wrapper">
+            <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Mantenimiento de Productos</h6>
+            <div class="table-wrapper">
+              <table id="producto_data" class="table display responsive nowrap">
+                <thead>
+                  <tr>
+                    <th class="wd-15p">Nombre</th>
+                    <th class="wd-15p">Precio</th>
+                    <th class="wd-20p">Cantidad</th>
+                    <th class="wd-15p">Precio Total</th>
+                    <th class="wd-10p"></th>
+                    <th class="wd-25p"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>  
+              </table>  
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+    <!-- ########## END: MAIN PANEL ########## -->
    
 
     <script src="../../public/lib/jquery/jquery.js"></script>
@@ -113,7 +152,16 @@
     <script src="../../public/lib/jquery-ui/jquery-ui.js"></script>
     <script src="../../public/lib/jquery-switchbutton/jquery.switchButton.js"></script>
     <script src="../../public/lib/peity/jquery.peity.js"></script>
-
     <script src="../../public/js/bracket.js"></script>
+
+    <script src="../../public/lib/datatables/jquery.dataTables.js"></script>
+    <script src="../../public/lib/datatables-responsive/dataTables.responsive.js"></script>
+
+    <script src="../../public/datatables/dataTables.buttons.min.js"></script>
+    <script src="../../public/datatables/buttons.html5.min.js"></script>
+    <script src="../../public/datatables/buttons.colVis.min.js"></script>
+    <script src="../../public/datatables/jszip.min.js"></script>
+
+    <script src="mntproducto.js"></script>
   </body>
 </html>
