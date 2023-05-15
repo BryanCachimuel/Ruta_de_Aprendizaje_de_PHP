@@ -27,7 +27,6 @@
             "aaData"=>$data
         );
         echo json_encode($resultados);
-
         break;
 
         case "guardaryeditar":
@@ -41,6 +40,17 @@
         }
         break;
         
+        case "mostrar":
+        $datos = $pro->get_producto_por_id($_POST["id_producto"]);
+        if(is_array($datos) == true and count($datos) > 0){
+            foreach($datos as $row){
+                $output["id_producto"] = $row["id_producto"];
+                $output["nombre"] = $row["nombre"];
+                $output["precio"] = $row["precio"];
+                $output["cantidad"] = $row["cantidad"];
+            }
+        }
+        break;
         
     }
 
