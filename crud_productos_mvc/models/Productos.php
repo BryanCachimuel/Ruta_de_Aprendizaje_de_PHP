@@ -13,7 +13,7 @@
         }
 
         public function get_producto_por_id($id_producto){
-            $conectar = parent::Conexion();
+            $conectar = parent::conexion();
             parent::set_names();
             $sql = "SELECT * FROM tm_producto WHERE id_producto=?";
             $sql = $conectar->prepare($sql);
@@ -23,7 +23,7 @@
         }
 
         public function agregar_producto($nombre, $precio, $cantidad){
-            $conectar = parent::Conexion();
+            $conectar = parent::conexion();
             parent::set_names();
             $vtotal = $precio * $cantidad;
             $sql = "INSERT INTO tm_producto(nombre,precio,cantidad,precio_total,fecha_creacion,estado) VALUES(?,?,?,?,now(),1)";
@@ -48,7 +48,7 @@
         }*/
 
         public function actualizar_producto($nombre, $precio, $cantidad, $id_producto){
-            $conectar = parent::Conexion();
+            $conectar = parent::conexion();
             parent::set_names();
             $vtotal = $precion * $cantidad;
             $sql = "UPDATE tm_producto
@@ -69,7 +69,7 @@
         }
 
         public function eliminar_producto($id_producto){
-            $conectar = parent::Conexion();
+            $conectar = parent::conexion();
             parent::set_names();
             $sql = "UPDATE tm_producto
                     SET estado=0, 
