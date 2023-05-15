@@ -29,6 +29,17 @@
         echo json_encode($resultados);
 
         break;
+
+        case "guardaryeditar":
+        $datos = $pro->get_producto_por_id($_POST["id_producto"]);
+        if(empty($_POST["id_producto"])){
+            if(is_array($datos) == true and count($datos) == 0){
+                $productos->agregar_producto($_POST["nombre"], $_POST["precio"], $_POST["cantidad"]);
+            }
+        }else{
+            $productos->actualizar_producto($_POST["nombre"], $_POST["precio"], $_POST["cantidad"],$_POST["id_producto"]);
+        }
+        break;
         
         
     }
