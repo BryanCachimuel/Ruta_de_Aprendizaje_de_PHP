@@ -51,6 +51,10 @@
             }
         }
         break;
+
+        case "eliminar":
+        $productos->eliminar_producto($_POST["id_producto"]);
+        break;
         
     }
 
