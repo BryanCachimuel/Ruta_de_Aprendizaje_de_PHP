@@ -2,7 +2,7 @@
     class Conectar{
         protected $base_datos;
 
-        protected function Conexion(){
+        protected function conexion(){
             try {
                 $conectar = $this->base_datos = new PDO("mysql:local=localhost;dbname=crud_productos_mvc","root","");
                 return $conectar; 
