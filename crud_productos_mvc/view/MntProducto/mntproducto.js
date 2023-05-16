@@ -63,4 +63,9 @@ function eliminar(id_producto){
     console.log(id_producto);
 }
 
+$(document).on("click","#btnnuevo", function(){
+    $('#mdltitulo').html('Nuevo Registro');
+    $('#modalmantenimiento').modal('show');
+});
+
 init();
