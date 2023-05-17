@@ -1,33 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Twitter -->
-    <meta name="twitter:site" content="@themepixels">
-    <meta name="twitter:creator" content="@themepixels">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bracket">
-    <meta name="twitter:description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="twitter:image" content="http://themepixels.me/bracket/img/bracket-social.png">
-
-    <!-- Facebook -->
-    <meta property="og:url" content="http://themepixels.me/bracket">
-    <meta property="og:title" content="Bracket">
-    <meta property="og:description" content="Premium Quality and Responsive UI for Dashboard.">
-
-    <meta property="og:image" content="http://themepixels.me/bracket/img/bracket-social.png">
-    <meta property="og:image:secure_url" content="http://themepixels.me/bracket/img/bracket-social.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="600">
-
-    <!-- Meta -->
-    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="author" content="ThemePixels">
-
+   
+    <?php require_once("../Partials/mainhead.php"); ?>
     <title>Mantenimiento de Productos</title>
 
     <!-- vendor css -->
@@ -146,25 +121,7 @@
    
     <?php require_once("modalmantenimiento.php"); ?>
 
-    <script src="../../public/lib/jquery/jquery.js"></script>
-    <script src="../../public/lib/popper.js/popper.js"></script>
-    <script src="../../public/lib/bootstrap/bootstrap.js"></script>
-    <script src="../../public/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-    <script src="../../public/lib/moment/moment.js"></script>
-    <script src="../../public/lib/jquery-ui/jquery-ui.js"></script>
-    <script src="../../public/lib/jquery-switchbutton/jquery.switchButton.js"></script>
-    <script src="../../public/lib/peity/jquery.peity.js"></script>
-    <script src="../../public/js/bracket.js"></script>
-
-    <script src="../../public/lib/datatables/jquery.dataTables.js"></script>
-    <script src="../../public/lib/datatables-responsive/dataTables.responsive.js"></script>
-
-    <script src="../../public/datatables/dataTables.buttons.min.js"></script>
-    <script src="../../public/datatables/buttons.html5.min.js"></script>
-    <script src="../../public/datatables/buttons.colVis.min.js"></script>
-    <script src="../../public/datatables/jszip.min.js"></script>
-
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <?php require_once("../Partials/mainjs.php"); ?>
 
     <script src="mntproducto.js"></script>
   </body>
