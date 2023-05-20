@@ -1,12 +1,12 @@
-let tabla;
+var tabla;
 
 function init(){
-    $("#producto_form").on("submit", function(e){
-        guardaryeditar(e);
-    })
+    $("#producto_form").on("submit",function(e){
+        guardaryeditar(e);	
+    });
 }
 
-$(document).ready(function(){
+$(document).ready(function(){ 
     tabla=$('#producto_data').dataTable({
 		"aProcessing": true,//Activamos el procesamiento del datatables
 	    "aServerSide": true,//Paginación y filtrado realizados por el servidor
@@ -18,7 +18,7 @@ $(document).ready(function(){
 		            'pdf'
 		        ],
         "ajax":{
-            url: '../../controller/ProductosController.php?opcion=listar',
+            url: '../../controller/producto.php?op=listar',
             type : "get",
             dataType : "json",
             error: function(e){
@@ -59,9 +59,9 @@ $(document).ready(function(){
 
 function guardaryeditar(e){
     e.preventDefault();
-    let formData = new FormData($("#producto_form")[0]);
+    var formData = new FormData($("#producto_form")[0]);
     $.ajax({
-        url: "../../controller/ProductosController.php?opcion=guardaryeditar",
+        url: "../../controller/producto.php?op=guardaryeditar",
         type: "POST",
         data: formData,
         contentType: false,
@@ -81,19 +81,17 @@ function guardaryeditar(e){
     });
 }
 
-function editar(id_producto){
-    $.post("../../controller/ProductosController.php?opcion=mostrar",{id_producto:id_producto},function (data) {
+function editar(prod_id){
+    $.post("../../controller/producto.php?op=mostrar",{prod_id:prod_id},function (data) {
         data = JSON.parse(data);
-        $('#id_producto').val(data.id_producto);
-        $('#nombre').val(data.nombre);
-        $('#precio').val(data.precio);
-        $('#cantidad').val(data.cantidad);
+        $('#prod_id').val(data.prod_id);
+        $('#prod_nom').val(data.prod_nom);
     });
     $('#mdltitulo').html('Editar Registro');
     $('#modalmantenimiento').modal('show');
 }
 
-function eliminar(id_producto){
+function eliminar(prod_id){
     swal.fire({
         title: 'CRUD',
         text: "Desea Eliminar el Registro?",
@@ -105,7 +103,7 @@ function eliminar(id_producto){
     }).then((result) => {
         if (result.isConfirmed) {
 
-            $.post("../../controller/ProductosController.php?opcion=eliminar",{id_producto:id_producto},function (data) {
+            $.post("../../controller/producto.php?op=eliminar",{prod_id:prod_id},function (data) {
 
             });
 
@@ -122,8 +120,6 @@ function eliminar(id_producto){
 
 $(document).on("click","#btnnuevo", function(){
     $('#mdltitulo').html('Nuevo Registro');
-    $('#producto_form')[0].reset();
-    $('#id_producto').val('');
     $('#modalmantenimiento').modal('show');
 });
 
