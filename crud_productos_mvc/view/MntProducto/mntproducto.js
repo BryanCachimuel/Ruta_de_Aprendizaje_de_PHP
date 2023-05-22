@@ -123,4 +123,4 @@ $(document).on("click","#btnnuevo", function(){
     $('#modalmantenimiento').modal('show');
 });
 
-init();
+init();  
