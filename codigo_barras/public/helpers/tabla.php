@@ -32,4 +32,17 @@
         }
         return arr;
     }
+
+    jsonvalor = '<?php echo json_encode($arraycodigos) ?>';
+    valores = arrayjsonbarcode(jsonvalor);
+
+    for(let i = 0; i < valores.length; i++){
+        JsBarcode("#barcode" + valores[i], valores[i].toString(),{
+            format: "codobar",
+            lineColor: "#000",
+            width: 2,
+            height: 30,
+            displayValue: true
+        });
+    }
 </script>
