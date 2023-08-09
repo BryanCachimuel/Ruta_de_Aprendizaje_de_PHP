@@ -22,3 +22,14 @@
         </tr>
     <?php endwhile;  ?>
 </table>
+
+<script type="text/javscript">
+    function arrayjsonbarcode(j){
+        json = JSON.parse(j);
+        arr = [];
+        for(let x in json){
+            arr.push(json[x]);
+        }
+        return arr;
+    }
+</script>
