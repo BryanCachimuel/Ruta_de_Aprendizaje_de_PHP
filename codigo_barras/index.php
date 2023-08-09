@@ -12,12 +12,18 @@
     <h1 class="mt-4">Código de Barras</h1>
         <div class="row">
             <div class="col-md-4">
-                <form action="" method="">
+                <form action="public/functions/insertar.php" method="POST" autocomplete="off">
                     <label for="">Nombre Farmaco:</label>
-                    <input type="text" name="nombre_farmaco" class="form-control">
+                    <input type="text" name="nombre_farmaceutico" class="form-control">
                     <br>
                     <button class="btn btn-primary" type="submit">Generar Código de Barras</button>
                 </form>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-10">
+                <?php require_once "public/helpers/tabla.php"; ?>
             </div>
         </div>
     </div>
