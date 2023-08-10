@@ -6,7 +6,7 @@
     $arraycodigos = array();
 ?>
 
-<table class="table">
+<table class="table table-info table-striped" border="1">
     <tr>
         <td>Nombre del Farmaco</td>
         <td>Código de Barras</td>
