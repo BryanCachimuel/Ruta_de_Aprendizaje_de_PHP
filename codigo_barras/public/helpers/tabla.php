@@ -7,7 +7,7 @@
 ?>
 
 <table class="table table-info table-striped" border="1">
-    <tr>
+    <tr style="font-weight: bold; font-size: 20px;">
         <td>Nombre del Farmaco</td>
         <td>Código de Barras</td>
     </tr>
