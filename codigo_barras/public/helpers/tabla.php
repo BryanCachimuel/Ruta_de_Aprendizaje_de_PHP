@@ -6,6 +6,8 @@
     $arraycodigos = array();
 ?>
 
+
+
 <table class="table table-info table-striped" border="1">
     <tr style="font-weight: bold; font-size: 20px;">
         <td>Nombre del Farmaco</td>
@@ -17,13 +19,14 @@
         <tr>
             <td><?php echo $datos[1]; ?></td>
             <td>
-                <svg id="<?php echo "barcode".$datos[2] ?>">
+                <!--<?php echo "barcode".$datos[2]; ?></svg>-->
+                <svg id='<?php echo "barcode".$datos[2]; ?>'></svg>
             </td>
         </tr>
     <?php endwhile;  ?>
 </table>
 
-<script type="text/javscript">
+<script type="text/javascript">
     function arrayjsonbarcode(j){
         json = JSON.parse(j);
         arr = [];
@@ -46,3 +49,4 @@
         });
     }
 </script>
+
