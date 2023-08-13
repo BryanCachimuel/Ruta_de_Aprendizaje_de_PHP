@@ -19,8 +19,8 @@
         <tr>
             <td><?php echo $datos[1]; ?></td>
             <td>
-                <!--<?php echo "barcode".$datos[2]; ?></svg>-->
-                <svg id='<?php echo "barcode".$datos[2]; ?>'></svg>
+                <!--<?php echo "barcode".$datos[2];?></svg>-->
+                <svg id='<?php echo "barcode".$datos[2];?>'></svg>
             </td>
         </tr>
     <?php endwhile;  ?>
