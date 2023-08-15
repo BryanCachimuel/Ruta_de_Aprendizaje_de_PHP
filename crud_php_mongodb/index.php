@@ -1,4 +1,4 @@
-<?php include "./header.php"; ?>
+<?php include "./parts/header.php"; ?>
 
 
 <div class="container">
@@ -7,16 +7,16 @@
             <div class="card mt-4">
                 <div class="card-body">
                     <h2>Crud con PHP y MongoDB</h2>
-                    <a href="" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Nuevo Registro</a>
+                    <a href="./views/agregar.php" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Nuevo Registro</a>
                     <hr>
                     <table class="table table-sm table-hover table-bordered">
                         <thead class="text-center">
                             <th>Apellido Paterno</th>
                             <th>Apellido Materno</th>
                             <th>Nombres</th>
+                            <th>Fecha de Nacimiento</th>
                             <th>Edad</th>
-                            <th>Sexo</th>
-                            <th>Estudios</th>
+                            <th>Ocupación</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
                         </thead>
@@ -48,4 +48,4 @@
     </div>
 </div>
 
-<?php include "./scripts.php";  ?>
+<?php include "./parts/scripts.php"; ?>
