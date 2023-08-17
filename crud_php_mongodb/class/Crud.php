@@ -40,6 +40,21 @@
             }
         }
 
+        public function eliminarDato($id) {
+            try {
+                $conexion = parent::conectar();
+                $coleccion = $conexion->personas;
+                $respuesta = $coleccion->deleteOne(
+                                            array(
+                                                "_id" => new MongoDB\BSON\ObjectId($id)
+                                            )
+                                        ); 
+                return $respuesta;
+            } catch (\Throwable $th) {
+                $th->getMessage();
+            }
+        }
+
     }
 
 ?>
