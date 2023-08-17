@@ -1,3 +1,13 @@
+<?php 
+    include("C://xampp/htdocs/Ejercicios_PHP/crud_php_mongodb/class/Conexion.php");
+    include("C://xampp/htdocs/Ejercicios_PHP/crud_php_mongodb/class/Crud.php");
+    
+    $crud = new Crud();
+    $id = $_POST['id']; 
+    $datos = $crud->obtenerDocumento($id);
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,12 +41,12 @@
 
                             <tbody>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?php echo $datos->apellido_paterno; ?></td>
+                                    <td><?php echo $datos->apellido_materno; ?></td>
+                                    <td><?php echo $datos->nombres; ?></td>
+                                    <td><?php echo $datos->fecha_nacimiento; ?></td>
+                                    <td><?php echo $datos->edad; ?></td>
+                                    <td><?php echo $datos->ocupacion; ?></td>
                                 </tr>
                             </tbody>
                         </table>
