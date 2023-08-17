@@ -1,5 +1,11 @@
-<?php include "./parts/header.php"; ?>
+<?php 
+    require_once("./class/Conexion.php");
+    require_once("./class/Crud.php");
+    $crud = new Crud();
+    $datos = $crud->mostrarDatos();
+?>
 
+<?php include "./parts/header.php"; ?>
 
 <div class="container">
     <div class="row">
@@ -22,24 +28,27 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center">
-                                    <form action="" method="post">
-                                        <button class="btn btn-warning"><i class="fa-solid fa-user-pen"></i></button>
-                                    </form>
-                                </td>
-                                <td class="text-center">
-                                    <form action="">
-                                        <button class="btn btn-danger"><i class="fa-solid fa-user-xmark"></i></button>
-                                    </form>
-                                </td>
-                            </tr>
+                            <?php foreach($datos as $agregar) { ?>
+                                <tr>
+                                    <td> <?php echo $agregar->apellido_paterno; ?> </td>
+                                    <td> <?php echo $agregar->apellido_materno; ?> </td>
+                                    <td> <?php echo $agregar->nombres; ?> </td>
+                                    <td> <?php echo $agregar->fecha_nacimiento; ?> </td>
+                                    <td> <?php echo $agregar->edad; ?> </td>
+                                    <td> <?php echo $agregar->ocupacion; ?> </td>
+                                    <td class="text-center">
+                                        <form action="" method="post">
+                                            <button class="btn btn-warning"><i class="fa-solid fa-user-pen"></i></button>
+                                        </form>
+                                    </td>
+                                    <td class="text-center">
+                                        <form action="./views/eliminar.php" method="POST">
+            
+                                            <button class="btn btn-danger"><i class="fa-solid fa-user-xmark"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php } ?>             
                         </tbody>
                     </table>
                 </div>
