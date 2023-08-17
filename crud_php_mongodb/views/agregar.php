@@ -15,35 +15,35 @@
             <div class="card mt-4">
                 <div class="card-body">
                     <h2>Agregar Registro</h2>
-                    <form action="" method="post">
+                    <form action="../process/insertar.php" method="post">
                         <div class="mt-3">
                             <label for="apellido_paterno">Apellido Paterno: </label>
-                            <input type="text" class="form-control" id="apellido_paterno" name="apellido_paterno">
+                            <input type="text" class="form-control" id="apellido_paterno" name="apellido_paterno" required>
                         </div>
 
                         <div class="mt-3 mb-3">
                             <label for="apellido_materno">Apellido Materno: </label>
-                            <input type="text" class="form-control" id="apellido_materno" name="apellido_materno">
+                            <input type="text" class="form-control" id="apellido_materno" name="apellido_materno" required>
                         </div>
 
                         <div class="mt-3 mb-3">
                             <label for="nombres">Nombres: </label>
-                            <input type="text" class="form-control" id="nombres" name="nombres">
+                            <input type="text" class="form-control" id="nombres" name="nombres" required>
                         </div>
                         
                         <div class="mt-3 mb-3">
                             <label for="fecha_nacimiento">Fecha de Nacimiento: </label>
-                            <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
+                            <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
                         </div>
 
                         <div class="mt-3 mb-3">
                             <label for="edad">Edad: </label>
-                            <input type="number" class="form-control"  name="edad" id="edad">
+                            <input type="number" class="form-control"  name="edad" id="edad" required>
                         </div>
 
                         <div class="mt-3 mb-3">
                             <label for="ocupacion">Ocupación:</label>
-                            <input type="text" class="form-control" name="ocupacion" id="ocupacion">
+                            <input type="text" class="form-control" name="ocupacion" id="ocupacion" required>
                         </div>
 
                         <div class="mt-3">
