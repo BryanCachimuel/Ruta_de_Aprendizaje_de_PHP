@@ -43,7 +43,7 @@
                                     </td>
                                     <td class="text-center">
                                         <form action="./views/eliminar.php" method="POST">
-            
+                                            <input type="hidden" value="<?php echo $agregar->_id; ?>" name="id">
                                             <button class="btn btn-danger"><i class="fa-solid fa-user-xmark"></i></button>
                                         </form>
                                     </td>
