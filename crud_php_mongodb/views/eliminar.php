@@ -56,7 +56,8 @@
                             <p>Una vez Eliminado no podrá ser recuperado</p>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                        <form action="" method="POST">
+                        <form action="../process/eliminar.php" method="POST">
+                            <input type="hidden" name="id" value="<?php echo $datos->_id; ?>">
                             <button class="btn btn-danger"><i class="fa-solid fa-trash"></i> Eliminar</button>
                             <a href="../index.php" class="btn btn-warning"><i class="fa-solid fa-xmark"></i> Cancelar</a>
                         </form>
