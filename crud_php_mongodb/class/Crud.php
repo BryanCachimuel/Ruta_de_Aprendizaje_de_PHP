@@ -14,6 +14,21 @@
             }
         }
 
+        public function obtenerDocumento($id) {
+            try {
+                $conexion = parent::conectar();
+                $coleccion = $conexion->personas;
+                $datos = $coleccion->findOne(
+                                        array(
+                                            '_id' => new MongoDB\BSON\ObjectId($id)
+                                        )
+                                     );
+                return $datos;
+            } catch (\Throwable $th) {
+                $th->getMessage();
+            }
+        }
+
         public function insertarDatos($datos) {
             try {
                 $conexion = parent::conectar();
