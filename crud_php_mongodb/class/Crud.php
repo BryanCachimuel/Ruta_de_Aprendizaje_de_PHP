@@ -55,6 +55,22 @@
             }
         }
 
+        public function actualizar($id, $datos) {
+            try {
+                $conexion = parent::conectar();
+                $coleccion = $conexion->personas;
+                $respuesta = $coleccion->updateOne(
+                                ['_id' => new MongoDB\BSON\ObjectId($id)],
+                                [
+                                    '$set' => $datos
+                                ]
+                            );
+                return $respuesta;
+            } catch (\Throwable $th) {
+                $th->getMessage();
+            }
+        }
+
     }
 
 ?>
