@@ -1,5 +1,4 @@
-<?php
-    
+<?php session_start();
     include("../class/Conexion.php");
     include("../class/Crud.php");
 
@@ -9,6 +8,7 @@
     $respuesta = $crud->eliminarDato($id);
 
     if($respuesta->getDeletedCount() > 0){
+        $_SESSION['mensaje_crud'] = 'delete';
         header("location:../index.php");
     }else{
         print_r($respuesta);
