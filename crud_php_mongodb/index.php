@@ -37,7 +37,8 @@
                                     <td> <?php echo $agregar->edad; ?> </td>
                                     <td> <?php echo $agregar->ocupacion; ?> </td>
                                     <td class="text-center">
-                                        <form action="" method="post">
+                                        <form action="./views/actualizar.php" method="POST">
+                                            <input type="hidden" value="<?php echo $agregar->_id; ?>" name="id">
                                             <button class="btn btn-warning"><i class="fa-solid fa-user-pen"></i></button>
                                         </form>
                                     </td>
