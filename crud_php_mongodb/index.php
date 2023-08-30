@@ -1,8 +1,16 @@
-<?php 
+<?php session_start();
     require_once("./class/Conexion.php");
     require_once("./class/Crud.php");
     $crud = new Crud();
     $datos = $crud->mostrarDatos();
+
+    $mensaje = '';
+
+    if(isset($_SESSION['mensaje_crud'])){
+        $mensaje = $crud->mensajesCrud($_SESSION['mensaje_crud']);
+        unset($_SESSION['mensaje_crud']);
+    }
+
 ?>
 
 <?php include "./parts/header.php"; ?>
@@ -59,3 +67,8 @@
 </div>
 
 <?php include "./parts/scripts.php"; ?>
+
+<script>
+    let mensaje = <?php echo $mensaje; ?>;
+    console.log(mensaje);
+</script>
