@@ -11,4 +11,20 @@ class VacacionalesController extends Controller
         $datos = DB::select("select * from cursos");
         return view("welcome")->with("datos", $datos);
     }
+
+    public function create(Request $request){
+        $sql =DB::insert("insert into cursos(nombre_curso,nombre_estudiante,nombre_instructor,actividades,instumentos,valor_curso) values(?,?,?,?,?,?)",[
+            $request->nombre_curso,
+            $request->nombre_estudiante,
+            $request->nombre_instructor,
+            $request->actividades,
+            $request->instumentos,
+            $request->valor_curso
+        ]);
+        if($sql == true){
+            return back()->with("Correcto","Estudiante Registrado Correctamente en el Curso");
+        }else{
+            return back()->with("Incorrecto","El Estudiante no ha sido Registrado en el Curso");
+        }
+    }
 }
