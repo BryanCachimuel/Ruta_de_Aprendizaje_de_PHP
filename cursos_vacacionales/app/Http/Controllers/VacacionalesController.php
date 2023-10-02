@@ -13,12 +13,12 @@ class VacacionalesController extends Controller
     }
 
     public function create(Request $request){
-        $sql =DB::insert("insert into cursos(nombre_curso,nombre_estudiante,nombre_instructor,actividades,instumentos,valor_curso) values(?,?,?,?,?,?)",[
+        $sql =DB::insert("insert into cursos(nombre_curso,nombre_estudiante,nombre_instructor,actividades,instrumentos,valor_curso) values(?,?,?,?,?,?)",[
             $request->nombre_curso,
             $request->nombre_estudiante,
             $request->nombre_instructor,
             $request->actividades,
-            $request->instumentos,
+            $request->instrumentos,
             $request->valor_curso
         ]);
         if($sql == true){
