@@ -123,7 +123,7 @@
                 </div>
                 <div class="modal-body">
                     <form action="{{route('crud.create')}}" autocomplete="off" method="POST">
-                        @csrf
+                    @csrf
                         <div class="mb-3">
                             <label for="nombre_curso" class="form-label">Curso:</label>
                             <input type="text" class="form-control" id="nombre_curso" name="nombre_curso">
@@ -145,8 +145,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="instumentos" class="form-label">Instrumentos:</label>
-                            <input type="text" class="form-control" id="instumentos" name="instumentos">
+                            <label for="instrumentos" class="form-label">Instrumentos:</label>
+                            <input type="text" class="form-control" id="instrumentos" name="instrumentos">
                         </div>
 
                         <div class="mb-3">
