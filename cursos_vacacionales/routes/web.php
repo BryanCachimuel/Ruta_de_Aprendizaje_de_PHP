@@ -18,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/", [VacacionalesController::class, "index"])->name("crud.index");
 
-// ruta para registra un nuevo estudiante
+/* ruta para registra un nuevo estudiante*/
 Route::post("/registrar-estudiante", [VacacionalesController::class, "create"])->name("crud.create");
