@@ -11,17 +11,17 @@
 <body>
 
     <?php
-        date_default_timezone_set('Asia/Seoul');
-        $sul = '<strong>Seoul:</strong> ' . date('H:i:s');
+        date_default_timezone_set('America/Vancouver');
+        $vancouver = '<strong>Vancouver:</strong> ' . date('H:i:s');
 
         date_default_timezone_set('America/Puerto_Rico');
-        $pr = '<strong>Puerto Rico:</strong> ' . date('H:i:s');
+        $puertp_rico = '<strong>Puerto Rico:</strong> ' . date('H:i:s');
 
-        date_default_timezone_set('Africa/Lubumbashi');
-        $lbmb = '<strong>Lubumbashi:</strong> ' . date('H:i:s');
+        date_default_timezone_set('America/Guayaquil');
+        $guayaquil = '<strong>Guayaquil:</strong> ' . date('H:i:s');
 
-        date_default_timezone_set('Europe/Athens');
-        $atn = '<strong>Atenas:</strong> ' . date('H:i:s');
+        date_default_timezone_set('America/Maceio');
+        $maceio = '<strong>Maceio:</strong> ' . date('H:i:s');
     ?>
 
     <div class="container">
@@ -29,30 +29,81 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h2>Reloj Mundial</h2>
+                        <h2>Reloj Mundial America</h2>
                         <div class="row mt-5">
 
                             <div class="col">
                                 <div class="alert alert-success" role="alert">
-                                    <?php echo $sul; ?>
+                                    <?php echo $vancouver; ?>
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="alert alert-info" role="alert">
-                                    <?php echo $pr; ?>
+                                    <?php echo $puertp_rico; ?>
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="alert alert-warning" role="alert">
-                                    <?php echo $lbmb; ?>
+                                    <?php echo $guayaquil; ?>
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="alert alert-primary" role="alert">
-                                    <?php echo $atn; ?>
+                                    <?php echo $maceio; ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+            date_default_timezone_set('Asia/Seoul');
+            $seoul = '<strong>Seoul:</strong> ' . date('H:i:s');
+
+            date_default_timezone_set('Asia/Kuwait');
+            $kuwait = '<strong>Kuwait:</strong> ' . date('H:i:s');
+
+            date_default_timezone_set('Asia/Jerusalem');
+            $jerusalem = '<strong>Jerusalem:</strong> ' . date('H:i:s');
+
+            date_default_timezone_set('Asia/Hong_Kong');
+            $hong_kong = '<strong>Hong Kong:</strong> ' . date('H:i:s');
+        ?>
+
+        <div class="row mt-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Reloj Mundial Asia</h2>
+                        <div class="row mt-5">
+
+                            <div class="col">
+                                <div class="alert alert-success" role="alert">
+                                    <?php echo $seoul; ?>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="alert alert-info" role="alert">
+                                    <?php echo $kuwait; ?>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="alert alert-warning" role="alert">
+                                    <?php echo $jerusalem; ?>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="alert alert-primary" role="alert">
+                                    <?php echo $hong_kong; ?>
                                 </div>
                             </div>
 
