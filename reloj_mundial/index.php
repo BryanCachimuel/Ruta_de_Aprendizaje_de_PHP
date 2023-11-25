@@ -164,6 +164,57 @@
             </div>
         </div>
 
+        <?php
+        date_default_timezone_set('Africa/Accra');
+        $accra = '<strong>Accra:</strong> ' . date('H:i:s');
+
+        date_default_timezone_set('Africa/Lagos');
+        $lagos = '<strong>Lagos:</strong> ' . date('H:i:s');
+
+        date_default_timezone_set('Africa/Freetown');
+        $freetown = '<strong>Freetown:</strong> ' . date('H:i:s');
+
+        date_default_timezone_set('Africa/Tripoli');
+        $tripoli = '<strong>Tripoli:</strong> ' . date('H:i:s');
+        ?>
+
+        <div class="row mt-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Reloj Mundial África</h2>
+                        <div class="row mt-5">
+
+                            <div class="col">
+                                <div class="alert alert-success" role="alert">
+                                    <?php echo $accra; ?>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="alert alert-info" role="alert">
+                                    <?php echo $lagos; ?>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="alert alert-warning" role="alert">
+                                    <?php echo  $freetown; ?>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="alert alert-primary" role="alert">
+                                    <?php echo $tripoli; ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
