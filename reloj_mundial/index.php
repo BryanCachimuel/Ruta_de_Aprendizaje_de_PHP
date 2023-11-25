@@ -10,12 +10,53 @@
 
 <body>
 
+    <?php
+        date_default_timezone_set('Asia/Seoul');
+        $sul = '<strong>Seoul:</strong> ' . date('H:i:s');
+
+        date_default_timezone_set('America/Puerto_Rico');
+        $pr = '<strong>Puerto Rico:</strong> ' . date('H:i:s');
+
+        date_default_timezone_set('Africa/Lubumbashi');
+        $lbmb = '<strong>Lubumbashi:</strong> ' . date('H:i:s');
+
+        date_default_timezone_set('Europe/Athens');
+        $atn = '<strong>Atenas:</strong> ' . date('H:i:s');
+    ?>
+
     <div class="container">
         <div class="row mt-4">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
                         <h2>Reloj Mundial</h2>
+                        <div class="row mt-5">
+
+                            <div class="col">
+                                <div class="alert alert-success" role="alert">
+                                    <?php echo $sul; ?>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="alert alert-info" role="alert">
+                                    <?php echo $pr; ?>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="alert alert-warning" role="alert">
+                                    <?php echo $lbmb; ?>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="alert alert-primary" role="alert">
+                                    <?php echo $atn; ?>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
