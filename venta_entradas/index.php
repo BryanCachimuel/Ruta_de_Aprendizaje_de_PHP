@@ -13,8 +13,12 @@
     </header>
 
     <section>
+
+    
+
         <form action="index.php" method="post">
-            <table>
+            <table id="formulario">
+                <h4 id="titulo">Formulario de Compra</h4>
                 <tr>
                     <td width="200">Comprador</td>
                     <td>
@@ -26,7 +30,7 @@
                 <tr>
                     <td>Fecha Actual</td>
                     <td>
-                        <input type="text" name="txtFecha" readonly size="10" value="<?php echo date('d/m/y'); ?>">
+                        <input type="text" name="txtFecha" readonly size="10" value="<?php echo date('d/m/Y'); ?>">
                     </td>
                 </tr>
                 
@@ -53,7 +57,41 @@
                     </td>
                 </tr>
             </table>
+
+            <table width="800" border="1">
+                <tr>
+                    <td>
+                        <table width="800">
+                            <h4 id="datos"> Datos de Compra</h4>
+                            <tr>
+                                <td width="150">Comprador</td>
+                                <td width="350"></td>
+                            </tr>
+                            <tr>
+                                <td>Costos por Adultos</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Costos por Niños</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Día de Promoción</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Monto Total a Pagar</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
         </form>
     </section>
+
+    <footer>
+        <h6 id="footer">Todos los Derechos Reservados -  Rixler Corp  - <?php echo date('Y')?></h6>
+    </footer>
 </body>
 </html>
