@@ -14,7 +14,23 @@
 
     <section>
 
-    
+    <?php
+        error_reporting(0);
+        $comprador = $_POST['txtComprador'];
+        $fecha = $_POST['txtFecha'];
+        $numAdultos = $_POST['txtNroEntradasAdultos'];
+        $numNinios = $_POST['txtNroEntradasNinios'];
+
+        $mComprador = '';
+        $mNumAdultos = '';
+        $mNumNinios = '';
+
+        if(isset($_POST['btnAdquirir'])){
+            if(empty($comprador)) $mComprador = 'Debe Ingresar un nombre';
+            elseif(is_numeric($comprador)) $mComprador = 'Solo se Permite Letras';
+            else $mComprador = '';
+        }
+    ?>
 
         <form action="index.php" method="post">
             <table id="formulario">
@@ -24,7 +40,7 @@
                     <td>
                         <input type="text" name="txtComprador" size="50">
                     </td>
-                    <td width="200"></td>
+                    <td width="200" id="error"><?php echo $mComprador; ?></td>
                 </tr>
 
                 <tr>
