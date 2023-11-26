@@ -14,7 +14,32 @@ img{
     margin: auto;
 }
 
+section{
+    margin-top: 30px;
+}
+
 table{
     margin: auto;
     width: 800px;
+}
+
+#formulario{
+    margin-bottom: 20px;
+}
+
+#titulo{
+    text-align: center;
+}
+
+#error{
+    color: #ff0000;
+    font-size: 12px;
+}
+
+#datos{
+    text-align: center;
+}
+
+#footer{
+    text-align: center;
 }
