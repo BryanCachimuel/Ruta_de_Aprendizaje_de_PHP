@@ -71,6 +71,9 @@
                 $costoNinios = 0;
                 break;
         }
+
+        $adultos = $costosAdultos * $numAdultos;
+        $ninios = $costoNinios * $numNinios;
     ?>
 
         <form action="index.php" method="post" autocomplete="off">
@@ -130,15 +133,15 @@
                             <h4 id="datos"> Datos de Compra</h4>
                             <tr>
                                 <td width="150">Comprador</td>
-                                <td width="350"></td>
+                                <td width="350"><?php echo $comprador; ?></td>
                             </tr>
                             <tr>
                                 <td>Costos por Adultos</td>
-                                <td></td>
+                                <td><?php echo "$". number_format($adultos,2, '.', ','); ?></td>
                             </tr>
                             <tr>
                                 <td>Costos por Niños</td>
-                                <td></td>
+                                <td><?php echo "$". number_format($ninios, 2, '.', ','); ?></td>
                             </tr>
                             <tr>
                                 <td>Día de Promoción</td>
@@ -146,7 +149,7 @@
                             </tr>
                             <tr>
                                 <td>Monto Total a Pagar</td>
-                                <td></td>
+                                <td><?php echo "$". number_format($adultos + $ninios, 2, '.', ','); ?></td>
                             </tr>
                         </table>
                     </td>
