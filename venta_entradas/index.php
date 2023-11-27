@@ -44,30 +44,31 @@
 
         switch($dia){
             case 'Monday':
-
+                $costosAdultos = 10;
+                $costoNinios = 5;
                 break;
             
             case 'Tuesday':
+                $costosAdultos = 8;
+                $costoNinios = 4;
                 break;
             
             case 'Wednesday':
-                
-                break;
-                
             case 'Thursday':
-                break;
-
             case 'Friday':
+                $costosAdultos = 16;
+                $costoNinios = 8;
                 break;
 
             case 'Saturday':
-                break;
-
             case 'Sunday':
+                $costosAdultos = 50;
+                $costoNinios = 45;
                 break;
 
             default:
-
+                $costosAdultos = 0;
+                $costoNinios = 0;
                 break;
         }
     ?>
