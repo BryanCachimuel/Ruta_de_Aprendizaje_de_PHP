@@ -29,6 +29,14 @@
             if(empty($comprador)) $mComprador = 'Debe Ingresar un nombre';
             elseif(is_numeric($comprador)) $mComprador = 'Solo se Permite Letras';
             else $mComprador = '';
+
+            if(empty($numAdultos)) $mNumAdultos = 'Debe Ingresar la cantidad de adultos para la compra de entradas';
+            elseif(is_string($numAdultos)) $mNumAdultos = 'Solo se Permite Números';
+            else $mNumAdultos = '';
+
+            if(empty($numNinios)) $mNumNinios = 'Debe Ingresar la cantidad de niños para la compra de entradas';
+            elseif(is_string($numNinios)) $mNumNinios = 'Solo se Permite Números';
+            else $mNumNinios = '';
         }
     ?>
 
@@ -55,7 +63,7 @@
                     <td>
                         <input type="text" name="txtNroEntradasAdultos" size="50">
                     </td>
-                    <td width="200"></td>
+                    <td width="200" id="error"><?php echo $mNumAdultos; ?></td>
                 </tr>
 
                 <tr>
@@ -63,7 +71,7 @@
                     <td>
                         <input type="text" name="txtNroEntradasNinios" size="50">
                     </td>
-                    <td width="200"></td>
+                    <td width="200" id="error"><?php echo $mNumNinios; ?></td>
                 </tr>
 
                 <tr>
