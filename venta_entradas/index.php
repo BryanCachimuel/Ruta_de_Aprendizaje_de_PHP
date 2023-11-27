@@ -31,16 +31,18 @@
             else $mComprador = '';
 
             if(empty($numAdultos)) $mNumAdultos = 'Debe Ingresar la cantidad de adultos para la compra de entradas';
-            elseif(is_string($numAdultos)) $mNumAdultos = 'Solo se Permite Números';
+            elseif(!is_numeric($numAdultos)) $mNumAdultos = 'Solo se Permite Números';
             else $mNumAdultos = '';
 
             if(empty($numNinios)) $mNumNinios = 'Debe Ingresar la cantidad de niños para la compra de entradas';
-            elseif(is_string($numNinios)) $mNumNinios = 'Solo se Permite Números';
+            elseif(!is_numeric($numNinios)) $mNumNinios = 'Solo se Permite Números';
             else $mNumNinios = '';
         }
+
+        /* Realizando los calculos */
     ?>
 
-        <form action="index.php" method="post">
+        <form action="index.php" method="post" autocomplete="off">
             <table id="formulario">
                 <h4 id="titulo">Formulario de Compra</h4>
                 <tr>
@@ -82,6 +84,14 @@
                 </tr>
             </table>
 
+
+            <?php
+                if(isset($_POST['btnAdquirir']) 
+                    && empty($mComprador) 
+                    && empty($mNumAdultos) 
+                    && empty($numNinios)){
+            ?>
+
             <table width="800" border="1">
                 <tr>
                     <td>
@@ -111,6 +121,9 @@
                     </td>
                 </tr>
             </table>
+
+            <?php } ?>
+            
         </form>
     </section>
 
