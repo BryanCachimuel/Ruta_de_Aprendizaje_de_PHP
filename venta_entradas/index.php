@@ -40,6 +40,36 @@
         }
 
         /* Realizando los calculos */
+        $dia = date('l');
+
+        switch($dia){
+            case 'Monday':
+
+                break;
+            
+            case 'Tuesday':
+                break;
+            
+            case 'Wednesday':
+                
+                break;
+                
+            case 'Thursday':
+                break;
+
+            case 'Friday':
+                break;
+
+            case 'Saturday':
+                break;
+
+            case 'Sunday':
+                break;
+
+            default:
+
+                break;
+        }
     ?>
 
         <form action="index.php" method="post" autocomplete="off">
@@ -89,7 +119,7 @@
                 if(isset($_POST['btnAdquirir']) 
                     && empty($mComprador) 
                     && empty($mNumAdultos) 
-                    && empty($numNinios)){
+                    && empty($mNumNinios)){
             ?>
 
             <table width="800" border="1">
@@ -111,7 +141,7 @@
                             </tr>
                             <tr>
                                 <td>Día de Promoción</td>
-                                <td></td>
+                                <td><?php echo $dia; ?></td>
                             </tr>
                             <tr>
                                 <td>Monto Total a Pagar</td>
