@@ -99,7 +99,20 @@
                     </td>
                 </tr>
 
-     
+                <tr>
+                    <td>Monto Mensualidad</td>
+                    <td><?php echo number_format($montoMensual, 2, '.', ','); ?></td>
+                </tr>
+
+                <tr>
+                    <td>Monto Descuento</td>
+                    <td><?php echo number_format($descuento, 2, '.', ','); ?></td>
+                </tr>
+
+                <tr>
+                    <td>Monto a Cancelar</td>
+                    <td><?php echo number_format($montoCancelar, 2, '.', ','); ?></td>
+                </tr>
 
             </table>
         </form>
