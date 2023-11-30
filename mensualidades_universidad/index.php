@@ -13,14 +13,44 @@
     </header>
 
     <section>
+
+    <?php
+        error_reporting(0);
+
+        $estudiante = $_POST['txtEstudiante'];
+        $categoria = $_POST['selCategoria'];
+        $promedio = $_POST['txtPromedio'];
+
+        if($categoria == "A") $selA = 'SELECTED';
+        else $selA = '';
+        if($categoria == "B") $selB = 'SELECTED';
+        else $selB = '';
+        if($categoria == "C") $selC = 'SELECTED';
+        else $selC = '';
+        if($categoria == "D") $selD = 'SELECTED';
+        else $selD = '';
+
+        $aMensaje = "";
+        $cMensaje = "";
+        $pMensaje = "";
+
+       if(isset($_POST['btnEnviar'])){
+            if(empty($estudiante)) $aMensaje = "Debe Ingresar el nombre del estudiante";
+            if($categoria == "Seleccione") $cMensaje = "Debe Seleccionar una Categoría";
+            if(empty($promedio) || !is_numeric($promedio)) $pMensaje = "Debe Ingresar Correctamente su Promedio";
+            elseif($promedio < 1 || $promedio > 10) $pMensaje = "El promedio debe ser entre 1 y 10";
+       }
+    ?>
+
         <form action="index.php" method="post">
             <table>
+                <h4 id="titulo">Formulario de Mensualidades</h4>
                 <tr>
                     <td>Nombre del Estudiantes: </td>
                     <td>
-                        <input type="text" name="txtEstudiante">
+                        <input type="text" name="txtEstudiante" size="35" value="<?php echo $estudiante; ?>">
                     </td>
-                    <td></td>
+                    <td class="error"><?php echo $aMensaje; ?></td>
                 </tr>
 
                 <tr>
@@ -28,21 +58,21 @@
                     <td>
                         <select name="selCategoria" SELECTED>
                             <option value="Seleccione">Seleccione Categoría</option>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
+                            <option value="A" <?php echo $selA; ?>>A</option>
+                            <option value="B" <?php echo $selB; ?>>B</option>
+                            <option value="C" <?php echo $selC; ?>>C</option>
+                            <option value="D" <?php echo $selD; ?>>D</option>
                         </select>
                     </td>
-                    <td></td>
+                    <td class="error"><?php echo $cMensaje; ?></td>
                 </tr>
 
                 <tr>
                     <td>Ingrese Promedio Bimestral: </td>
                     <td>
-                        <input type="text" name="txtPromedio">
+                        <input type="text" name="txtPromedio" size="35" value="<?php echo $promedio; ?>">
                     </td>
-                    <td></td>
+                    <td class="error"><?php echo $pMensaje; ?></td>
                 </tr>
 
                 <tr>
@@ -70,5 +100,9 @@
             </table>
         </form>
     </section>
+
+    <footer>
+        <h6 id="centrado"> los Derechos Reservados Rixler Corp</h6>
+    </footer>
 </body>
 </html>
