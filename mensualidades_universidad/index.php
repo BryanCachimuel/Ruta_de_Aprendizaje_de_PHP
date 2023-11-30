@@ -75,6 +75,23 @@
                     <td class="error"><?php echo $pMensaje; ?></td>
                 </tr>
 
+                <?php
+                    if(!empty($estudiante) && $categoria != "Seleccione" && $promedio >= 1 && $promedio <= 10){
+                        if($categoria == "A") $montoMensual = 850;
+                        if($categoria == "B") $montoMensual = 750;
+                        if($categoria == "C") $montoMensual = 650;
+                        if($categoria == "D") $montoMensual = 550;
+
+                        if($promedio < 6) $descuento = 0;
+                        if($promedio >= 7) $descuento = (20/100) * $montoMensual; 
+                        if($promedio >= 8) $descuento = (30/100) * $montoMensual;
+                        if($promedio >= 9) $descuento = (40/100) * $montoMensual;
+                        if($promedio >= 10) $descuento = (50/100) * $montoMensual;
+
+                        $montoCancelar = $montoMensual - $descuento;
+                    }
+                ?>
+
                 <tr>
                     <td></td>
                     <td>
@@ -82,20 +99,7 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td>Monto Mensualidad</td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td>Monto Descuento</td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td>Monto a Cancelar</td>
-                    <td></td>
-                </tr>
+     
 
             </table>
         </form>
