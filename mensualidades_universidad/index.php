@@ -95,23 +95,23 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="btnEnviar" value="Procesar">
+                        <input class="boton" type="submit" name="btnEnviar" value="Procesar">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Monto Mensualidad</td>
-                    <td><?php echo number_format($montoMensual, 2, '.', ','); ?></td>
+                    <td>Monto Mensualidad: </td>
+                    <td>$ <?php echo number_format($montoMensual, 2, '.', ','); ?></td>
                 </tr>
 
                 <tr>
-                    <td>Monto Descuento</td>
-                    <td><?php echo number_format($descuento, 2, '.', ','); ?></td>
+                    <td>Monto Descuento: </td>
+                    <td>$ <?php echo number_format($descuento, 2, '.', ','); ?></td> 
                 </tr>
 
                 <tr>
-                    <td>Monto a Cancelar</td>
-                    <td><?php echo number_format($montoCancelar, 2, '.', ','); ?></td>
+                    <td>Monto a Cancelar:</td>
+                    <td id="monto_cancelar">$ <?php echo number_format($montoCancelar, 2, '.', ','); ?></td>
                 </tr>
 
             </table>
