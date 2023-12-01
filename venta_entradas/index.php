@@ -32,7 +32,7 @@
 
             if(empty($numAdultos)) $mNumAdultos = 'Debe Ingresar la cantidad de adultos para la compra de entradas';
             elseif(!is_numeric($numAdultos)) $mNumAdultos = 'Solo se Permite Números';
-            else $mNumAdultos = '';
+           else $mNumAdultos = '';
 
             if(empty($numNinios)) $mNumNinios = 'Debe Ingresar la cantidad de niños para la compra de entradas';
             elseif(!is_numeric($numNinios)) $mNumNinios = 'Solo se Permite Números';
@@ -113,7 +113,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="btnAdquirir" value="Adquirir">
+                        <input class="boton" type="submit" name="btnAdquirir" value="Adquirir">
                     </td>
                 </tr>
             </table>
