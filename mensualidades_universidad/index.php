@@ -42,7 +42,7 @@
        }
     ?>
 
-        <form action="index.php" method="post">
+        <form action="index.php" method="post" autocomplete="off">
             <table>
                 <h4 id="titulo">Formulario de Mensualidades</h4>
                 <tr>
@@ -119,7 +119,7 @@
     </section>
 
     <footer>
-        <h6 id="centrado"> los Derechos Reservados Rixler Corp</h6>
+        <h6 id="centrado"> los Derechos Reservados Rixler Corp  <?php echo date('Y')?></h6>
     </footer>
 </body>
 </html>
