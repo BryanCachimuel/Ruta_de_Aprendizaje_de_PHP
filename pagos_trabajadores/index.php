@@ -35,6 +35,24 @@
                         </select>
                     </td>
                 </tr>
+                <?php
+                    error_reporting(0);
+
+                    // capturando datos
+                    $empleado = $_POST['txtEmpleado'];
+                    $hora = $_POST['txtHoras'];
+                    $categoria = $_POST['selCategoria'];
+
+                    // realizar los calculos
+                    if($categoria == "Jefe") $pagoHora = 50;
+                    if($categoria == "Administrativo") $pagoHora = 30;
+                    if($categoria == "Operario") $pagoHora = 15;
+                    if($categoria == "Practicante") $pagoHora = 5;
+
+                    $sBruto = $hora * $pagoHora;
+                    $descuento = $sBruto * (15/100);
+                    $sNeto = $sBruto - $descuento;
+                ?>
             </table>
         </form>
     </section>
