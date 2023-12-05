@@ -14,6 +14,7 @@
 
     <section>
         <form action="index.php" method="post" autocomplete="off">
+            <h3 id="centrado">Formulario de Calculo</h3>
             <table>
                 <tr>
                     <td>Empleado</td>
@@ -60,7 +61,9 @@
                     $descuento = $sBruto * (15/100);
                     $sNeto = $sBruto - $descuento;
                 ?>
-
+                <tr>
+                    <td></td>
+                </tr>
                 <tr>
                     <td>Empleado</td>
                     <td><?php echo $empleado; ?></td>
@@ -75,7 +78,7 @@
                 </tr>
                 <tr>
                     <td>Salario Neto</td>
-                    <td><?php echo "$". number_format($sNeto, 2, '.', ','); ?></td>
+                    <td class="sNeto"><?php echo "$". number_format($sNeto, 2, '.', ','); ?></td>
                 </tr>
             </table>
         </form>
