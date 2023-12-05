@@ -13,7 +13,7 @@
     </header>
 
     <section>
-        <form action="index.php" method="post">
+        <form action="index.php" method="post" autocomplete="off">
             <table>
                 <tr>
                     <td>Empleado</td>
@@ -35,6 +35,13 @@
                         </select>
                     </td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="Procesar" value="Procesar">
+                        <input type="reset" value="Limpiar">
+                    </td>
+                </tr>
                 <?php
                     error_reporting(0);
 
@@ -53,6 +60,23 @@
                     $descuento = $sBruto * (15/100);
                     $sNeto = $sBruto - $descuento;
                 ?>
+
+                <tr>
+                    <td>Empleado</td>
+                    <td><?php echo $empleado; ?></td>
+                </tr>
+                <tr>
+                    <td>Salario Bruto</td>
+                    <td><?php echo "$". number_format($sBruto, 2, '.', ','); ?></td>
+                </tr>
+                <tr>
+                    <td>Descuento</td>
+                    <td><?php echo "$". number_format($descuento, 2, '.', ','); ?></td>
+                </tr>
+                <tr>
+                    <td>Salario Neto</td>
+                    <td><?php echo "$". number_format($sNeto, 2, '.', ','); ?></td>
+                </tr>
             </table>
         </form>
     </section>
