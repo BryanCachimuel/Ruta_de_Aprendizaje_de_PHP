@@ -37,6 +37,13 @@
                 </tr>
 
                 <tr>
+                    <td width="200">Valor de Alquiler</td>
+                    <td>
+                        <input type="text" name="txtValor" size="40">
+                    </td>
+                </tr>
+
+                <tr>
                     <td width="200"></td>
                     <td>
                         <input type="submit" value="Calcular">
@@ -47,7 +54,17 @@
                 </tr>
 
                 <!-- código php -->
+                <?php
+                    $nombre = $_POST['txtNombre'];
+                    $prenda = $_POST['txtPrenda'];
+                    $horas = $_POST['txtHoras'];
+                    $valor = $_POST['txtValor'];
 
+                    // realizar los calculos
+                    $valorBruto = $horas * $valor;
+                    $iva = 12/100;
+                    $valorTotal = $valorBruto * $iva;
+                ?>
             </form>
         </table>
     </section>
