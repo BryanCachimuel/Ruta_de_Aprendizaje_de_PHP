@@ -13,7 +13,7 @@
     </header>
 
     <section>
-        <table id="tabla">
+        <table id="tabla" align="center">
             <form action="index.php" method="post">
                 <tr>
                     <td width="200">Nombre Usuario</td>
@@ -46,15 +46,19 @@
                 <tr>
                     <td width="200"></td>
                     <td>
-                        <input type="submit" value="Calcular">
-                    </td>
-                    <td>
+                        <input type="submit" value="Procesar">
                         <input type="reset" value="Limpiar">
                     </td>
+                </tr>
+                <tr>
+                    <td></td>
                 </tr>
 
                 <!-- código php -->
                 <?php
+
+                    error_reporting(0);
+
                     $nombre = $_POST['txtNombre'];
                     $prenda = $_POST['txtPrenda'];
                     $horas = $_POST['txtHoras'];
@@ -62,9 +66,40 @@
 
                     // realizar los calculos
                     $valorBruto = $horas * $valor;
-                    $iva = 12/100;
-                    $valorTotal = $valorBruto * $iva;
+                    $iva = (12 * $valorBruto)/100;
+                    $valorTotal = $valorBruto + $iva;
+                    $vTotalT = number_format($valorTotal, 2)
                 ?>
+
+                <tr>
+                    <td>Nombre Usuario</td>
+                    <td><?php echo $nombre; ?></td>
+                </tr>
+
+                <tr>
+                    <td>Prenda Usuario</td>
+                    <td><?php echo $prenda; ?></td>
+                </tr>
+
+                <tr>
+                    <td>Horas de Uso</td>
+                    <td><?php echo $horas; ?></td>
+                </tr>
+
+                <tr>
+                    <td>Valor por Hora</td>
+                    <td><?php echo $valor; ?></td>
+                </tr>
+
+                <tr>
+                    <td>I.V.A</td>
+                    <td><?php echo $iva; ?></td>
+                </tr>
+
+                <tr>
+                    <td>Valor Total</td>
+                    <td><?php echo "$ ". $vTotalT; ?></td>
+                </tr>
             </form>
         </table>
     </section>
