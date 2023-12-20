@@ -1,3 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: azure;
+}
+
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
@@ -5,6 +12,9 @@ body{
 
 #centrado{
     text-align: center;
+    color: #ff0000;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 img{
