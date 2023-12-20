@@ -13,8 +13,8 @@
     </header>
 
     <section>
-        <table id="tabla" align="center">
-            <form action="index.php" method="post">
+        <table id="tabla">
+            <form action="index.php" method="post" autocomplete="off">
                 <tr>
                     <td width="200">Nombre Usuario</td>
                     <td>
@@ -70,37 +70,40 @@
                     $valorTotal = $valorBruto + $iva;
                     $vTotalT = number_format($valorTotal, 2)
                 ?>
+            </form>
+        </table>
 
+        
+        <table id="impresion">
                 <tr>
-                    <td>Nombre Usuario</td>
+                    <td>Nombre Usuario: </td>
                     <td><?php echo $nombre; ?></td>
                 </tr>
 
-                <tr>
-                    <td>Prenda Usuario</td>
+                <tr align="center">
+                    <td>Prenda Usuario: </td>
                     <td><?php echo $prenda; ?></td>
                 </tr>
 
-                <tr>
-                    <td>Horas de Uso</td>
+                <tr align="center">
+                    <td>Horas de Uso: </td>
                     <td><?php echo $horas; ?></td>
                 </tr>
 
-                <tr>
-                    <td>Valor por Hora</td>
+                <tr align="center">
+                    <td>Valor por Hora: </td>
                     <td><?php echo $valor; ?></td>
                 </tr>
 
-                <tr>
-                    <td>I.V.A</td>
+                <tr align="center">
+                    <td>I.V.A: </td>
                     <td><?php echo $iva; ?></td>
                 </tr>
 
-                <tr>
-                    <td>Valor Total</td>
+                <tr align="center" id="vTotalT">
+                    <td>Valor Total: </td>
                     <td><?php echo "$ ". $vTotalT; ?></td>
                 </tr>
-            </form>
         </table>
     </section>
 
