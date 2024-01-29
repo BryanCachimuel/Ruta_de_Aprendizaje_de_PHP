@@ -59,22 +59,22 @@
                             <!--TODO: este script es obligatorio en los formularios -->
                             @csrf
                             <!--<div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Código del Producto</label>
+                                <label for="txtCodigo" class="form-label">Código del Producto</label>
                                 <input type="text" name="txtCodigo" class="form-control" id="txtCodigo">
                             </div>-->
 
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nombre del Producto</label>
+                                <label for="txtNombre" class="form-label">Nombre del Producto</label>
                                 <input type="text" name="txtNombre" class="form-control" id="txtNombre">
                             </div>
 
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Precio del Producto</label>
-                                <input type="text" name="txtPrecio" class="form-control" id="txtPrecio">
+                                <label for="txtPrecio" class="form-label">Precio del Producto</label>
+                                <input type="number" step="0.01" name="txtPrecio" class="form-control" id="txtPrecio">
                             </div>
 
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Cantidad del Producto</label>
+                                <label for="txtCantidad" class="form-label">Cantidad del Producto</label>
                                 <input type="number" name="txtCantidad" class="form-control" id="txtCantidad">
                             </div>
 
@@ -89,7 +89,7 @@
         </div>
     </div>
 
-        <table class="table table-striped table-bordered table-hover">
+        <table class="table table-primary table-striped table-bordered table-hover text-center">
             <thead class="bg-primary text-white">
                 <tr>
                     <th scope="col">CODIGO</th>
@@ -124,22 +124,22 @@
                                         <form action="{{route('crud.update')}}" method="POST" autocomplete="off">
                                             @csrf
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Código del Producto</label>
+                                                <label for="txtCodigo" class="form-label">Código del Producto</label>
                                                 <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" value="{{$prod->id_producto}}" readonly>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Nombre del Producto</label>
+                                                <label for="txtNombre" class="form-label">Nombre del Producto</label>
                                                 <input type="text" name="txtNombre" class="form-control" id="txtNombre" value="{{$prod->nombre}}">
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="exampleInputPassword1" class="form-label">Precio del Producto</label>
-                                                <input type="text" name="txtPrecio" class="form-control" id="txtPrecio" value="{{$prod->precio}}">
+                                                <label for="txtPrecio" class="form-label">Precio del Producto</label>
+                                                <input type="number" step="0.01" name="txtPrecio" class="form-control" id="txtPrecio" value="{{$prod->precio}}">
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="exampleInputPassword1" class="form-label">Cantidad del Producto</label>
+                                                <label for="txtCantidad" class="form-label">Cantidad del Producto</label>
                                                 <input type="number" name="txtCantidad" class="form-control" id="txtCantidad" value="{{$prod->cantidad}}">
                                             </div>
 
