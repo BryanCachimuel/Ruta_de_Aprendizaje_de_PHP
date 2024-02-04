@@ -26,10 +26,16 @@ class MarcaController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * marcas->nombre_marca : nombre del atributo desde la bdd 
+     * $request->input('nombre_marca') : nombre del atributo traido desde el formulario de creación 
      */
     public function store(Request $request)
     {
-        //
+        $marcas = new Marca;
+        $marcas->nombre_marca = $request->input('nombre_marca');
+        $marcas->descripcion_marca = $request->input('descripcion_marca');
+        $marcas->save();
+        return redirect()->back();
     }
 
     /**
@@ -50,17 +56,24 @@ class MarcaController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * en la clase Marca se establece el método find para buscar por id_marca
      */
-    public function update(Request $request, Marca $marca)
-    {
-        //
+    public function update(Request $request, $id_marca)
+    {   
+        $marcas = Marca::find($id_marca);
+        $marcas->nombre_marca = $request->input('nombre_marca');
+        $marcas->descripcion_marca = $request->input('descripcion_marca');
+        $marcas->update();
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Marca $marca)
+    public function destroy($id_marca)
     {
-        //
+        $marcas = Marca::find($id_marca);
+        $marcas->delete();
+        return redirect()->back();
     }
 }
