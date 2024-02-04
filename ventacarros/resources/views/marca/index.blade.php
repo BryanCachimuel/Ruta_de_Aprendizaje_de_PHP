@@ -23,10 +23,12 @@
                         <td>{{$marca->nombre_marca}}</td>
                         <td>{{$marca->descripcion_marca}}</td>
                         <td>
-                            <a href="" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href="" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editarmarca{{$marca->id_marca}}"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarmarca{{$marca->id_marca}}"><i class="fa-solid fa-trash-can"></i></button>
                         </td>
                     </tr>
+                <!-- invocando al modal de actualización marca -->
+                @include('marca.info')
                 @endforeach
             </tbody>
         </table>
