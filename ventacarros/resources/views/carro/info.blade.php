@@ -59,3 +59,36 @@
          </div>
      </div>
  </div>
+
+
+ <!-- Modal para eliminar -->
+ <div class="modal fade" id="eliminarcarro{{$carro->id_carro}}" tabindex="-1" aria-labelledby="eliminarcarroLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Datos del Carro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+               <form action="{{route('carros.destroy',$carro->id_carro)}}" method="post" autocomplete="off">
+                   @csrf
+                   @method('DELETE')
+                   <div class="modal-body">
+
+                       <div class="mb-3">
+                          <p>
+                            ¿Está usted seguro de eliminar a la marca <strong>{{$carro->Marca->nombre_marca}}</strong>?
+                          </p>
+                       </div>
+                   </div>
+
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                       <button type="submit" class="btn btn-primary">Confirmar</button>
+                   </div>
+
+               </form>
+        </div>
+    </div>
+</div>
+
