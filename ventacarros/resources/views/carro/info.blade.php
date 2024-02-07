@@ -17,7 +17,12 @@
                          <label for="nombre_marca" class="form-label">Marca: </label>
                          <select name="id_marca" class="form-control">
                              @foreach ($marcas as $marca)
-                                 <option value="{{ $marca->id_marca }}">{{ $marca->nombre_marca }}</option>
+                                 @if ($marca->id_marca == $carro->id_marca)
+                                    <option value="{{ $marca->id_marca }}" selected>{{ $marca->nombre_marca }}</option>
+                                    @else
+                                    <option value="{{ $marca->id_marca }}">{{ $marca->nombre_marca }}</option>
+                                 @endif
+                                 
                              @endforeach
                          </select>
                      </div>
