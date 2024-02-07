@@ -30,6 +30,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('carros') }}">Carros</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('clientes') }}">Clientes</a>
+            </li>
         </ul>
     </nav>
 
@@ -37,13 +40,13 @@
     <main class="container">
 
         <div class="row">
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
 
-            <div class="col-md-8">
+            <div class="col-md-10">
                 @yield('content')
             </div>
 
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
         </div>
 
 
