@@ -19,4 +19,8 @@ class Carro extends Model
     public function Marca(){
         return $this->hasOne(Marca::class,'id_marca','id_marca');
     }
+
+    public function Cliente(){
+        return $this->hasOne(Cliente::class,'id_cliente','id_cliente');
+    }
 }
