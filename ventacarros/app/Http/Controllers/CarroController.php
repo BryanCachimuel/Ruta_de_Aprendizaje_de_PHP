@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carro;
+use App\Models\Cliente;
 use App\Models\Marca;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class CarroController extends Controller
         $carros = Carro::all();
         /* para obtener todas las marcas y poder listarlas en el select de creación de carros */
         $marcas = Marca::all();
-        return view('carro.index', compact('carros','marcas'));
+        $clientes = Cliente::all();
+        return view('carro.index', compact('carros','marcas','clientes'));
     }
 
     /**
@@ -34,7 +36,7 @@ class CarroController extends Controller
     {
         $carros = new Carro;
         $carros->id_marca = $request->input('id_marca');
-        $carros->nombre_propietario = $request->input('nombre_propietario');
+        $carros->id_cliente = $request->input('id_cliente');
         $carros->descripcion_carro = $request->input('descripcion_carro');
         $carros->precio_carro = $request->input('precio_carro');
         $carros->cantidad_carro = $request->input('cantidad_carro');
@@ -66,7 +68,7 @@ class CarroController extends Controller
     {
         $carros = Carro::find($id_carro);
         $carros->id_marca = $request->input('id_marca');
-        $carros->nombre_propietario = $request->input('nombre_propietario');
+        $carros->id_cliente = $request->input('id_cliente');
         $carros->descripcion_carro = $request->input('descripcion_carro');
         $carros->precio_carro = $request->input('precio_carro');
         $carros->cantidad_carro = $request->input('cantidad_carro');
