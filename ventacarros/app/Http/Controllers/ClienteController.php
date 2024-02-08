@@ -29,7 +29,15 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $clientes = new Cliente();
+        $clientes->cedula_cliente = $request->input('cedula_cliente');
+        $clientes->nombre_cliente = $request->input('nombre_cliente');
+        $clientes->edad_cliente = $request->input('edad_cliente');
+        $clientes->correo_cliente = $request->input('correo_cliente');
+        $clientes->celular_cliente = $request->input('celular_cliente');
+        $clientes->direccion_cliente = $request->input('direccion_cliente');
+        $clientes->save();
+        return redirect()->back();
     }
 
     /**
