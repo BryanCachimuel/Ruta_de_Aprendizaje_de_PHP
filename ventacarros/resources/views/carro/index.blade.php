@@ -24,9 +24,8 @@
                 @foreach ($carros as $carro)
                     <tr class="">
                         <td scope="row">{{$carro->id_carro}}</td>
-                        <!--<td>{{$carro->id_marca}}</td>-->
                         <td>{{$carro->Marca->nombre_marca}}</td>
-                        <td>{{$carro->nombre_propietario}}</td>
+                        <td>{{$carro->Cliente->nombre_cliente}}</td>
                         <td>{{$carro->descripcion_carro}}</td>
                         <td>$ {{$carro->precio_carro}}</td>
                         <td>{{$carro->cantidad_carro}}</td>
