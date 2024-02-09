@@ -28,10 +28,10 @@
                 <a class="nav-link" href="{{ url('marcas') }}">Marcas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('carros') }}">Carros</a>
+                <a class="nav-link" href="{{ url('clientes') }}">Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('clientes') }}">Clientes</a>
+                <a class="nav-link" href="{{ url('carros') }}">Carros</a>
             </li>
         </ul>
     </nav>
