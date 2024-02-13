@@ -21,8 +21,12 @@
                      </div>
 
                      <div class="mb-3">
-                         <label for="nombre_propietario" class="form-label">Propietario: </label>
-                         <input type="text" class="form-control" name="nombre_propietario" id="nombre_propietario"/>
+                         <label for="nombre_cliente" class="form-label">Cliente: </label>
+                         <select name="id_cliente" class="form-control">
+                            @foreach($clientes as $cliente)
+                                <option value="{{$cliente->id_cliente}}">{{$cliente->nombre_cliente}}</option>
+                            @endforeach
+                         </select>
                      </div>
 
                      <div class="mb-3">
