@@ -29,7 +29,15 @@
 
                      <div class="mb-3">
                          <label for="nombre_propietario" class="form-label">Propietario: </label>
-                         <input type="text" class="form-control" name="nombre_propietario" id="nombre_propietario" value="{{$carro->nombre_propietario}}" />
+                         <select name="id_cliente" class="form-control">
+                            @foreach ($clientes as $cliente)
+                                @if ($cliente->id_cliente == $carro->id_cliente)
+                                    <option value="{{$cliente->id_cliente}}" selected>{{$cliente->nombre_cliente}}</option>
+                                    @else
+                                    <option value="{{$cliente->id_cliente}}">{{$cliente->nombre_cliente}}</option>
+                                @endif
+                            @endforeach
+                         </select>
                      </div>
 
                      <div class="mb-3">
