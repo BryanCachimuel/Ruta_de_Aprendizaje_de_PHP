@@ -13,13 +13,61 @@
     text-transform: uppercase;
 }
 
-table{
+#tabla{
     margin: auto;
     font-size: 20px;
 }
 
+#btn_procesar{
+    width: 100px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 2px solid #000000;
+    cursor: pointer;
+    background: #0000ff;
+    color: #f0f8ff;
+}
+
+#btn_limpiar{
+    width: 100px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 2px solid #000000;
+    cursor: pointer;
+    background: red;
+    color: #f0f8ff;
+}
+
+#btn_procesar:hover{
+    width: 100px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 2px solid #0000ff;
+    cursor: pointer;
+    background: #ffffff;
+    color: #000000;
+}
+
+#btn_limpiar:hover{
+    width: 100px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 2px solid #ff0000;
+    cursor: pointer;
+    background: #ffffff;
+    color: #000000;
+}
+
 #impresion{
-    text-align: center;
+    margin: auto;
     margin-top: 20px;
 }
 
