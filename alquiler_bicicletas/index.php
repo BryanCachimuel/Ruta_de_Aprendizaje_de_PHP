@@ -46,8 +46,8 @@
                 <tr>
                     <td width="200"></td>
                     <td>
-                        <input type="submit" value="Procesar">
-                        <input type="reset" value="Limpiar">
+                        <button type="submit" id="btn_procesar"> Procesar </button>
+                        <button type="reset" id="btn_limpiar">Limpiar</button>
                     </td>
                 </tr>
                 <tr>
@@ -66,8 +66,9 @@
 
                     // realizar los calculos
                     $valorBruto = $horas * $valor;
-                    $iva = (12 * $valorBruto)/100;
-                    $valorTotal = $valorBruto + $iva;
+                    $iva = ((12 * $valorBruto)/100);
+                    $fmtIva = round($iva,2);
+                    $valorTotal = $valorBruto + $fmtIva;
                     $vTotalT = number_format($valorTotal, 2)
                 ?>
             </form>
