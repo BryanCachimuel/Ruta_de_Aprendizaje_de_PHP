@@ -39,8 +39,9 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="Procesar" value="Procesar">
-                        <input type="reset" value="Limpiar">
+                        <button type="submit" class="btn_procesesar">Procesar</button>
+                        <button type="reset" class="btn_limpiar">Limpiar</button>
+                        <a href="index.php" class="btn_nuevo">Nueva Consulta</a>
                     </td>
                 </tr>
                 <?php
