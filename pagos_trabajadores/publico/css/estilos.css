@@ -29,6 +29,74 @@ table{
     margin: auto;
 }
 
+.btn_procesesar{
+    margin-top: 20px;
+    width: 90px;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    background: blue;
+    border-radius: 5px;
+    border: 2px solid blue;
+}
+
+.btn_limpiar{
+    margin-top: 20px;
+    width: 90px;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    background: red;
+    border-radius: 5px;
+    border: 2px solid red;
+}
+
+.btn_nuevo{
+    text-decoration: none;
+    margin-top: 20px;
+    width: 90px;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    background: green;
+    border-radius: 5px;
+    border: 2px solid green; 
+}
+
+.btn_procesesar:hover{
+    margin-top: 20px;
+    width: 90px;
+    color: blue;
+    font-weight: bold;
+    padding: 5px;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid blue;
+}
+
+.btn_limpiar:hover{
+    margin-top: 20px;
+    width: 90px;
+    color: red;
+    font-weight: bold;
+    padding: 5px;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid red;
+}
+
+.btn_nuevo:hover{
+    text-decoration: none;
+    margin-top: 20px;
+    width: 90px;
+    color: green;
+    font-weight: bold;
+    padding: 5px;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid green; 
+}
+
 .sNeto{
     color: #0000ff;
     font-weight: bold;
