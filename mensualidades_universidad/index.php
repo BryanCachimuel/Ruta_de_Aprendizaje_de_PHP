@@ -95,7 +95,9 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input class="boton" type="submit" name="btnEnviar" value="Procesar">
+                        <button type="submit" class="btn_procesar" name="btnEnviar">Procesar</button>
+                        <button type="submit" class="btn_limpiar">Limpiar</button>
+                        <a href="index.php" class="btn_nueva">Nueva Consulta</a>
                     </td>
                 </tr>
 
