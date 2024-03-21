@@ -1,8 +1,8 @@
 *{
     margin: 0;
-    padding: 0;
+    padding: 0; 
     box-sizing: border-box;
-    background: #00aeff;
+    background: #dad5d5;
 }
 
 body{
@@ -41,14 +41,80 @@ table{
     color: #ff0000;
 }
 
-.boton{
+.btn_procesar{
+    font-weight: bold;
     border: none; 
-    color: black; 
+    color: #ffffff; 
     padding: 10px 28px; 
     cursor: pointer; 
     border-radius: 5px; 
-    background-color: white;
-    border: 2px solid #000000;
+    background-color: #0000ff;
+    border: 2px solid #0000ff;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.btn_limpiar{
+    font-weight: bold;
+    border: none; 
+    color: #ffffff; 
+    padding: 10px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    background-color: #ff0000;
+    border: 2px solid #ff0000;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.btn_nueva{
+    text-decoration: none;
+    font-weight: bold;
+    border: none; 
+    color: #ffffff; 
+    padding: 10px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    background-color: #0cdf0c;
+    border: 2px solid #0cdf0c;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.btn_procesar:hover{
+    border: none; 
+    color: #0000ff; 
+    padding: 10px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    background-color: #ffffff;
+    border: 2px solid #0000ff;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.btn_limpiar:hover{
+    border: none; 
+    color: #ff0000; 
+    padding: 10px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    background-color: #ffffff;
+    border: 2px solid #ff0000;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.btn_nueva:hover{
+    text-decoration: none;
+    font-weight: bold;
+    border: none; 
+    color: #0cdf0c; 
+    padding: 10px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    background-color: #ffffff;
+    border: 2px solid #0cdf0c;
     margin-top: 10px;
     margin-bottom: 15px;
 }
