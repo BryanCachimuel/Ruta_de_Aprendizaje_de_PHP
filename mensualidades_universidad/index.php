@@ -19,7 +19,10 @@
 
         $estudiante = $_POST['txtEstudiante'];
         $categoria = $_POST['selCategoria'];
-        $promedio = $_POST['txtPromedio'];
+        $notaUno = $_POST['txtNota1'];
+        $notaDos = $_POST['txtNota2'];
+        $notaTres = $_POST['txtNota3'];
+        $promedio = (($notaUno + $notaDos + $notaTres)/3);
 
         if($categoria == "A") $selA = 'SELECTED';
         else $selA = '';
@@ -48,7 +51,7 @@
                 <tr>
                     <td>Nombre del Estudiantes: </td>
                     <td>
-                        <input type="text" name="txtEstudiante" size="35" value="<?php echo $estudiante; ?>">
+                        <input class="nombre" type="text" name="txtEstudiante" size="35" value="<?php echo $estudiante; ?>">
                     </td>
                     <td class="error"><?php echo $aMensaje; ?></td>
                 </tr>
@@ -56,7 +59,7 @@
                 <tr>
                     <td>Seleccione la Categoría: </td>
                     <td>
-                        <select name="selCategoria" SELECTED>
+                        <select name="selCategoria" SELECTED class="selectCategoria">
                             <option value="Seleccione">Seleccione Categoría</option>
                             <option value="A" <?php echo $selA; ?>>A</option>
                             <option value="B" <?php echo $selB; ?>>B</option>
@@ -68,9 +71,32 @@
                 </tr>
 
                 <tr>
-                    <td>Ingrese Promedio Bimestral: </td>
+                    <td>Nota 1</td>
                     <td>
-                        <input type="text" name="txtPromedio" size="35" value="<?php echo $promedio; ?>">
+                        <input class="nota1" type="text" name="txtNota1" value="<?php echo $nota1; ?>">
+                    </td>
+                </tr>
+
+                <tr>
+                    
+                <td>Nota 2</td>
+                    <td>
+                        <input class="nota2" type="text" name="txtNota2" value="<?php echo $nota1; ?>">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Nota 3</td>
+                    <td>
+                        <input class="nota3" type="text" name="txtNota3" value="<?php echo $nota1; ?>">
+                        <button type="submit" class="btn_calcular">Calcular</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Promedio Bimestral: </td>
+                    <td>
+                        <input class="promedio" type="text" name="txtPromedio" disabled value="<?php echo $promedio; ?>">
                     </td>
                     <td class="error"><?php echo $pMensaje; ?></td>
                 </tr>
