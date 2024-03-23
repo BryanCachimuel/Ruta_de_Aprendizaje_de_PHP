@@ -82,7 +82,7 @@
                 <tr>
                     <td width="200">Comprador</td>
                     <td>
-                        <input type="text" name="txtComprador" size="50">
+                        <input class="comprador" type="text" name="txtComprador">
                     </td>
                     <td width="200" id="error"><?php echo $mComprador; ?></td>
                 </tr>
@@ -90,14 +90,14 @@
                 <tr>
                     <td>Fecha Actual</td>
                     <td>
-                        <input type="text" name="txtFecha" readonly size="10" value="<?php echo date('d/m/Y'); ?>">
+                        <input class="fecha" type="text" name="txtFecha" readonly value="<?php echo date('d/m/Y'); ?>">
                     </td>
                 </tr>
                 
                 <tr>
                     <td>Nro de Entradas Adultos</td>
                     <td>
-                        <input type="text" name="txtNroEntradasAdultos" size="50">
+                        <input class="adultos" type="text" name="txtNroEntradasAdultos" size="50">
                     </td>
                     <td width="200" id="error"><?php echo $mNumAdultos; ?></td>
                 </tr>
@@ -105,7 +105,7 @@
                 <tr>
                     <td>Nro de Entradas Niños</td>
                     <td>
-                        <input type="text" name="txtNroEntradasNinios" size="50">
+                        <input class="ninios" type="text" name="txtNroEntradasNinios" size="50">
                     </td>
                     <td width="200" id="error"><?php echo $mNumNinios; ?></td>
                 </tr>
