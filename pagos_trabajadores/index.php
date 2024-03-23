@@ -18,16 +18,16 @@
             <table>
                 <tr>
                     <td>Empleado</td>
-                    <td><input type="text" name="txtEmpleado" size="40"></td>
+                    <td><input class="empleado" type="text" name="txtEmpleado" size="40"></td>
                 </tr>
                 <tr>
                     <td>Horas Trabajadas</td>
-                    <td><input type="text" name="txtHoras" size="40"></td>
+                    <td><input class="horas" type="text" name="txtHoras" size="40"></td>
                 </tr>
                 <tr>
                     <td>Categoria</td>
                     <td>
-                        <select name="selCategoria">
+                        <select name="selCategoria" class="selCategorias">
                             <option value="">-- Elija una Categoria--</option>
                             <option value="Jefe">Jefe</option>
                             <option value="Administrativo">Administrativo</option>
@@ -84,5 +84,8 @@
             </table>
         </form>
     </section>
+    <footer>
+        <h6 id="centrado"> Todos los Derechos Reservados Rixler Corp  <?php echo date('Y')?></h6>
+    </footer>
 </body>
 </html>
