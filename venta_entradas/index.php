@@ -113,7 +113,9 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input class="boton" type="submit" name="btnAdquirir" value="Adquirir">
+                        <button class="boton" type="submit" name="btnAdquirir">Adquirir</button>
+                        <button class="limpiar" type="reset">Limpiar</button>
+                        <a href="index.php" class="nuevaCompra">Nueva Compra</a>
                     </td>
                 </tr>
             </table>
