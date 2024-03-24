@@ -15,6 +15,10 @@
 
     error_reporting(0);
 
+    $nombre = $_POST['txtNombre'];
+    $monto = $_POST['txtMonto'];
+    $tiket = $_POST['txtTicket'];
+
     ?>
 
     <section>
@@ -37,7 +41,7 @@
                 <tr>
                     <td>Número de Ticket: </td>
                     <td>
-                        <input class="input_ticket" type="text" name="txtTicket" placeholder="Ingrese número de tickey" value="<?php echo $_POST['txtTicket'] ?>">
+                        <input class="input_ticket" type="text" name="txtTicket" placeholder="Ingrese número de tickey" value="<?php echo $tiket; ?>">
                     </td>
                 </tr>
 
@@ -49,6 +53,29 @@
                         <button class="btn_consulta" type="submit">Nueva Consulta</button>
                     </td>
                 </tr>
+
+                <?php 
+                /* Obtieniendo regalos */
+                if($tiket >= 1 && $tiket <= 4){
+                    $regalo = 'Smart Watch Cobreloa 01A';
+                    $descuento = ((20/100) * $monto);
+                }
+                if($tiket >= 5 && $tiket <= 9){
+                    $regalo = 'Audifonos Hyunday 10L';
+                    $descuento = ((17/100) * $monto);
+                }
+                if($tiket >= 10 && $tiket <= 14){
+                    $regalo = 'Parlantes para PC Sony';
+                    $descuento = ((15/100) * $monto);
+                }
+                if($tiket >= 15 && $tiket <= 20){
+                    $regalo = 'Teclado RadioSchack Alambrico';
+                    $descuento = ((12/100) * $monto);
+                }
+                if($tiket < 1 && $tiket  > 20){
+                   echo '<script> alert("Ticket No Valido"); </script>';
+                }
+                ?>
             </table>
         </form>
     </section>
