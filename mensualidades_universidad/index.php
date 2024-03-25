@@ -22,7 +22,6 @@
         $notaUno = $_POST['txtNota1'];
         $notaDos = $_POST['txtNota2'];
         $notaTres = $_POST['txtNota3'];
-        $promedio = (($notaUno + $notaDos + $notaTres)/3);
 
         if($categoria == "A") $selA = 'SELECTED';
         else $selA = '';
@@ -35,13 +34,23 @@
 
         $aMensaje = "";
         $cMensaje = "";
-        $pMensaje = "";
+        $nMensajeUno = "";
+        $nMensajeDos = "";
+        $nMensajeTres = "";
 
        if(isset($_POST['btnEnviar'])){
             if(empty($estudiante)) $aMensaje = "Debe Ingresar el nombre del estudiante";
             if($categoria == "Seleccione") $cMensaje = "Debe Seleccionar una Categoría";
-            if(empty($promedio) || !is_numeric($promedio)) $pMensaje = "Debe Ingresar Correctamente su Promedio";
-            elseif($promedio < 1 || $promedio > 10) $pMensaje = "El promedio debe ser entre 1 y 10";
+            if(empty($notaUno) || !is_numeric($notaUno)) $nMensajeUno = "Debe Ingresar Correctamente su Nota 1";
+            elseif($notaUno < 1 || $notaUno > 10) $nMensajeUno = "La Nota 1 debe ser entre 1 y 10";
+            if(empty($notaDos) || !is_numeric($notaDos)) $nMensajeDos = "Debe Ingresar Correctamente su Nota 2";
+            elseif($notaDos < 1 || $notaDos > 10) $nMensajeDos = "La Nota 2 debe ser entre 1 y 10";
+            if(empty($notaTres) || !is_numeric($notaTres)) $nMensajeTres = "Debe Ingresar Correctamente su Nota 3";
+            elseif($notaTres < 1 || $notaTres > 10) $nMensajeTres = "La Nota 3 debe ser entre 1 y 10";
+       }
+
+       if(isset($_POST['btnCalcular'])){
+            $promedio = (($notaUno + $notaDos + $notaTres)/3);
        }
     ?>
 
@@ -73,32 +82,34 @@
                 <tr>
                     <td>Nota 1</td>
                     <td>
-                        <input class="nota1" type="text" name="txtNota1" value="<?php echo $nota1; ?>">
+                        <input class="nota1" type="text" name="txtNota1" value="<?php echo $notaUno; ?>">
                     </td>
+                    <td class="error"><?php echo $nMensajeUno; ?></td>
                 </tr>
 
                 <tr>
                     
                 <td>Nota 2</td>
                     <td>
-                        <input class="nota2" type="text" name="txtNota2" value="<?php echo $nota1; ?>">
+                        <input class="nota2" type="text" name="txtNota2" value="<?php echo $notaDos; ?>">
                     </td>
+                    <td class="error"><?php echo $nMensajeDos; ?></td>
                 </tr>
 
                 <tr>
                     <td>Nota 3</td>
                     <td>
-                        <input class="nota3" type="text" name="txtNota3" value="<?php echo $nota1; ?>">
-                        <button type="submit" class="btn_calcular">Calcular</button>
+                        <input class="nota3" type="text" name="txtNota3" value="<?php echo $notaTres; ?>">
+                        <button type="submit" class="btn_calcular" name="btnCalcular">Calcular</button>
                     </td>
+                    <td class="error"><?php echo $nMensajeTres; ?></td>
                 </tr>
 
                 <tr>
                     <td>Promedio Bimestral: </td>
                     <td>
-                        <input class="promedio" type="text" name="txtPromedio" disabled value="<?php echo $promedio; ?>">
+                        <input class="promedio" type="text" name="txtPromedio" disabled value="<?php echo number_format($promedio, 2, '.', ','); ?>">
                     </td>
-                    <td class="error"><?php echo $pMensaje; ?></td>
                 </tr>
 
                 <?php
