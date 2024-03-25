@@ -70,6 +70,7 @@
 }
 
 .btn_consulta{
+    text-decoration: none;
     width: 120px;
     padding: 7px;
     border-radius: 5px;
@@ -117,3 +118,20 @@
     transition: .5s;
 }
 
+.valores{
+    color: #ff0000;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.regalo{
+    color: #0000ff;
+}
+
+.derechos{
+    text-align: center;
+    color: #ff4500;
+    margin-top: 20px;
+}
