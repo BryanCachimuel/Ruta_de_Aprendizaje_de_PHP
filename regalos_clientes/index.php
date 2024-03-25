@@ -72,7 +72,7 @@
                     $regalo = 'Teclado RadioSchack Alambrico';
                     $descuento = ((12/100) * $monto);
                 }
-                if($tiket < 1 && $tiket  > 20){
+                if($tiket < 1 || $tiket  > 20){
                    echo '<script> alert("Ticket No Valido"); </script>';
                 }
 
@@ -102,7 +102,7 @@
                 <tr>
                     <td>Monto a Cancelar: </td>
                     <td>
-                        <?php echo "$ ". number_format($montoNuevo, 2,',','.') ?>
+                        <?php echo "$ ". number_format($montoNuevo, 2,'.',',') ?>
                     </td>
                 </tr>
                 <tr>
@@ -114,5 +114,9 @@
             </table>
         </form>
     </section>
+
+    <footer>
+        <h5 class="derechos">Todos los Drechos Reservados © Rixler Corp <?php echo date('Y'); ?></h5>
+    </footer>
 </body>
 </html>
