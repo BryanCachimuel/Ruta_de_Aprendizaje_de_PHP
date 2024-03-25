@@ -22,7 +22,7 @@
     ?>
 
     <section>
-        <form action="index.php" method="post">
+        <form action="index.php" method="post" autocomplete="off">
             <table class="tabla">
                 <tr>
                     <td>Nombre del Cliente: </td>
@@ -50,7 +50,7 @@
                     <td>
                         <button class="btn_procesar" type="submit">Procesar</button>
                         <button class="btn_limpiar" type="reset">Limpiar</button>
-                        <button class="btn_consulta" type="submit">Nueva Consulta</button>
+                        <a class="btn_consulta" href="index.php">Nueva Consulta</a>
                     </td>
                 </tr>
 
@@ -75,7 +75,42 @@
                 if($tiket < 1 && $tiket  > 20){
                    echo '<script> alert("Ticket No Valido"); </script>';
                 }
+
+                $montoNuevo = $monto - $descuento;
+
                 ?>
+
+                <!-- Imprimir resultados -->
+                <tr>
+                    <td></td>
+                    <td class="valores">Valores y Obsequio</td>
+                </tr>
+                <tr>
+                    <td>Monto por Compra: </td>
+                    <td>
+                        <?php echo "$ ".$monto; ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Descuento</td>
+                    <td>
+                        <?php echo "$ ".$descuento; ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Monto a Cancelar: </td>
+                    <td>
+                        <?php echo "$ ". number_format($montoNuevo, 2,',','.') ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Regalo Obtenido: </td>
+                    <td class="regalo">
+                        <?php echo $regalo; ?>
+                    </td>
+                </tr>
             </table>
         </form>
     </section>
