@@ -101,7 +101,7 @@ table{
 }
 
 .promedio{
-    width: 400px;
+    width: 80px;
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -195,11 +195,11 @@ table{
 .boton:hover{
     border: 2px solid #ffffff;
     background: #000000; 
-    color: white;
+    color: #ffffff;
 }
 
 #monto_cancelar{
-    color: #ffffff;
+    color: #0000ff;
     font-weight: bold;
     font-size: 15px;
 }
