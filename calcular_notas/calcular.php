@@ -1,0 +1,1 @@
+<!-- captura de datos y calculo del promedio -->
