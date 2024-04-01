@@ -5,7 +5,7 @@
 }
 
 .contenedor{
-   margin-top: 20px;;
+   margin-top: 30px;
 }
 
 .titulo{
@@ -19,13 +19,13 @@
     border: 2px solid #000000;
     border-radius: 10px;
     padding: 20px;
-    width: 500px;
+    width: 400px;
     height: 120px;
 }
 
 #txtCantidad{
     margin-bottom: 20px;
-    width: 295px;
+    width: 220px;
     height: 25px;
     padding: 5px;
     border-radius: 10px;
@@ -50,5 +50,50 @@
     border-radius: 10px;
     background-color: white;
     color: #008000;
+    transition: .5s;
+}
+
+.subtitulo{
+    margin-top: 30px;
+    text-align: center;
+    text-transform: uppercase;  
+}
+
+.formulario_calcular{
+    margin: auto;
+    margin-top: 20px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+}
+
+.txtNota{
+    margin-bottom: 20px;
+    width: 295px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.boton_calcular{
+    width: 150px;
+    height: 35px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    background-color: blue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.boton_calcular:hover{
+    border: 2px solid #0000ff;
+    border-radius: 10px;
+    background-color: white;
+    color: #0000ff;
     transition: .5s;
 }
