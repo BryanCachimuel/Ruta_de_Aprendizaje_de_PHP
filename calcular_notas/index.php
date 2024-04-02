@@ -18,6 +18,7 @@
             </p>
             <p>
                 <button class="boton_ingresar" type="submit">Ingresar Notas</button>
+                <a class="consulta" href="index.php">Nueva Consulta</a>
             </p>
         </form>
 
@@ -26,7 +27,7 @@
             $cantidad = $_POST['txtCantidad'];
             $i = 1;                             /* contar el número de cajas de texto  */
         ?>
-            <h3 class="subtitulo">Promedio de Notas</h3>
+            <h3 class="subtitulo">Promedio de <?php echo $cantidad?> Notas Ingresadas</h3>
             <form class="formulario_calcular" action="calcular.php" method="post" autocomplete="off">
                 <?php
 
