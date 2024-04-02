@@ -2,10 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: #00a6ff;
 }
 
 .contenedor{
    margin-top: 30px;
+   width: auto;
+   height: auto;
+   background: #00a6ff;
 }
 
 .titulo{
@@ -29,6 +33,8 @@
     height: 25px;
     padding: 5px;
     border-radius: 10px;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .boton_ingresar{
@@ -45,11 +51,33 @@
     transition: .5s;
 }
 
+.consulta{
+    width: 150px;
+    height: 40px;
+    text-decoration: none;
+    padding: 5px;
+    border: 2px solid #ff00ff;
+    border-radius: 5px;
+    margin-left: 80px;
+    background-color: #ff00ff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: .5s;
+}
+
 .boton_ingresar:hover{
     border: 2px solid #008000;
     border-radius: 10px;
     background-color: white;
     color: #008000;
+    transition: .5s;
+}
+
+.consulta:hover{
+    border: 2px solid #ff00ff;
+    background-color: #ffffff;
+    color: #ff00ff;
+    cursor: pointer;
     transition: .5s;
 }
 
@@ -74,6 +102,8 @@
     height: 25px;
     padding: 5px;
     border-radius: 10px;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .boton_calcular{
