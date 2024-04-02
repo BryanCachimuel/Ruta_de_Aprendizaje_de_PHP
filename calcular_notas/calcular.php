@@ -19,5 +19,15 @@ print "No permitido";
 }
 
 ?>
-<br>
-<a href="index.php">Regresar</a>
+<br><br>
+<a style="text-decoration: none;
+          width:300px;
+          height: 100px;
+          padding:5px;
+          border: 2px solid red;
+          border-radius: 5px;
+          background: #ff0000;
+          color: #ffffff;
+          " href="index.php">
+    Regresar
+</a>
