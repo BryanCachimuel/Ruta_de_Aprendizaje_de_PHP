@@ -120,7 +120,52 @@
                 </tr>
 
             </table>
+
+            <?php
+                if(isset($_POST['btnComprar'])
+                   && empty($mComprador)
+                   && empty($mAdultos)
+                   && empty($mNinios))
+            ?>
+
+            <table width="800" border="1">
+                <tr>
+                    <td>
+                        <table width="800">
+                            <tr>
+                                <td><td width="150">Nombre Comprador</td></td>
+                                <td width="350"><?php echo $nombre_comprador?></td>
+                            </tr>
+
+                            <tr>
+                                <td>Costo para Adultos</td>
+                                <td><?php echo "$" . number_format($adultos, 2, '.', ','); ?></td>
+                            </tr>
+
+                            <tr>
+                                <td>Costo para Niños</td>
+                                <td><?php echo "$" . number_format($ninios, 2, '.', ','); ?></td>
+                            </tr>
+
+                            <tr>
+                                <td>Día de Promoción</td>
+                                <td><?php echo $dia; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td>Monto Total a Pagar</td>
+                                <td><?php echo "$" . number_format($adultos + $ninios, 2, '.', ','); ?></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
         </form>
     </section>
+
+    <footer>
+        <h6 id="footer">Todos los Derechos Reservados -  Rixler Corp  - <?php echo date('Y')?></h6>
+    </footer>
+    
 </body>
 </html>
