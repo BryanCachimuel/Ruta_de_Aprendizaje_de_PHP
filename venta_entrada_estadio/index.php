@@ -34,7 +34,45 @@
                 elseif(!is_numeric($cantidad_ninios)) $cantidad_ninios = 'Solo se permite números';
                 else $cantidad_ninios;
             }
+            
+            $dia = date('l');
 
+            switch($dia){
+                case 'Monday':
+                    $costosAdultos = 7;
+                    $costoNinios = 3;
+                    break;
+                
+                case 'Tuesday':
+                    $costosAdultos = 8;
+                    $costoNinios = 4;
+                    break;
+
+                case 'Wednesday':
+                    $costosAdultos = 9;
+                    $costoNinios = 4.5;
+                    break;
+               
+                case 'Thursday':
+                case 'Friday':
+                    $costosAdultos = 12;
+                    $costoNinios = 6;
+                    break;
+    
+                case 'Saturday':
+                case 'Sunday':
+                    $costosAdultos = 28;
+                    $costoNinios = 14;
+                    break;
+    
+                default:
+                    $costosAdultos = 0;
+                    $costoNinios = 0;
+                    break;
+            }
+
+            $adultos = $costosAdultos * $cantidad_adultos;
+            $ninios = $costoNinios * $cantidad_ninios;
         ?>
 
         <form action="index.php" method="POST" autocomplete="off">
