@@ -75,8 +75,8 @@
         ?>
 
         <form action="index.php" method="POST" autocomplete="off">
-            <table>
-                <h4>Formulario de Compra de Entradas</h4>
+            <table id="formulario">
+                <h4 id="formulario_titulo">Formulario de Compra de Entradas</h4>
 
                 <tr>
                     <td width="200">Comprador</td>
@@ -112,7 +112,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <button class="boton" type="submit" name="btnComprar">Comprar Entradas</button>
+                        <button class="boton" type="submit" name="btnComprar">Comprar</button>
                         <button class="limpiar" type="reset">Limpiar</button>
                         <a href="index.php" class="nuevaCompra">Nueva Compra</a>
                     </td>
@@ -129,10 +129,10 @@
             ) {
             ?>
 
-                <table width="800" border="1">
+                <table id="tabla_superior" width="800" border="1">
                     <tr>
                         <td>
-                            <table width="800">
+                            <table id="tabla_resultados" width="800">
                                 <h4 id="datos"> Datos de Compra</h4>
                                 <tr>
                                     <td width="150">Nombre Comprador</td>
