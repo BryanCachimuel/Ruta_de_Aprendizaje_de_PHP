@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #808080;
+    font-size: 14px;
+}
+
+section{
+    margin-top: 30px;
+}
+
+table{
+    margin: auto;
+    width: 800px;
+}
+
+
+#formulario{
+    margin-bottom: 20px;
+}
+
+#formulario_titulo{
+    text-align: center;
+}
+
+.comprador{
+    width: 400px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+}
+
+.fecha{
+    width: 400px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+}
+
+.adultos{
+    width: 400px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+}
+
+.ninios{
+    width: 400px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+}
