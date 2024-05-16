@@ -18,28 +18,28 @@
                 <tr>
                     <td width="200">Nombre Usuario</td>
                     <td>
-                        <input type="text" name="txtNombre" size="40">
+                        <input type="text" class="nombre" name="txtNombre" size="40">
                     </td>
                 </tr>
 
                 <tr>
                     <td width="200">Prenda Usuario</td>
                     <td>
-                        <input type="text" name="txtPrenda" size="40">
+                        <input type="text" class="prenda" name="txtPrenda" size="40">
                     </td>
                 </tr>
 
                 <tr>
                     <td width="200">Horas de Alquiler</td>
                     <td>
-                        <input type="text" name="txtHoras" size="40">
+                        <input type="text" class="horas" name="txtHoras" size="40">
                     </td>
                 </tr>
 
                 <tr>
                     <td width="200">Valor de Alquiler</td>
                     <td>
-                        <input type="text" name="txtValor" size="40">
+                        <input type="text" class="valor" name="txtValor" size="40">
                     </td>
                 </tr>
 
