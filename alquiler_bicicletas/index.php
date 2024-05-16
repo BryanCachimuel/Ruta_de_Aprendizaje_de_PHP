@@ -48,6 +48,7 @@
                     <td>
                         <button type="submit" id="btn_procesar"> Procesar </button>
                         <button type="reset" id="btn_limpiar">Limpiar</button>
+                        <a href="index.php" id="consulta">Consultar</a>
                     </td>
                 </tr>
                 <tr>
