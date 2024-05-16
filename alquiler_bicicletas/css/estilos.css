@@ -78,6 +78,21 @@
     transition: .5s;
 }
 
+#consulta{
+    border: none; 
+    text-decoration: none;
+    font-size: 17px;
+    color: #ffffff; 
+    padding: 8px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    background-color: #0077ff;
+    border: 2px solid #0077ff;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    transition: .5s;
+}
+
 #btn_procesar:hover{
     width: 100px;
     font-weight: bold;
@@ -100,6 +115,19 @@
     cursor: pointer;
     background: #ffffff;
     color: #ff0000;
+}
+
+#consulta:hover{
+    border: none; 
+    text-decoration: none;
+    color: #0077ff; 
+    padding: 8px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    background-color: #f0f8ff;
+    border: 2px solid #0077ff;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 #impresion{
