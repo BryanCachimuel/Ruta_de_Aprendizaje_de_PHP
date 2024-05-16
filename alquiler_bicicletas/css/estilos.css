@@ -52,26 +52,30 @@
 
 #btn_procesar{
     width: 100px;
+    height: 40px;
     font-weight: bold;
     padding: 5px;
     margin-top: 25px;
     border-radius: 5px;
-    border: 2px solid #000000;
+    border: 2px solid #0000ff;
     cursor: pointer;
     background: #0000ff;
     color: #f0f8ff;
+    transition: .5s;
 }
 
 #btn_limpiar{
     width: 100px;
+    height: 40px;
     font-weight: bold;
     padding: 5px;
     margin-top: 25px;
     border-radius: 5px;
-    border: 2px solid #000000;
+    border: 2px solid #ff0000;
     cursor: pointer;
-    background: red;
+    background: #ff0000;
     color: #f0f8ff;
+    transition: .5s;
 }
 
 #btn_procesar:hover{
@@ -83,7 +87,7 @@
     border: 2px solid #0000ff;
     cursor: pointer;
     background: #ffffff;
-    color: #000000;
+    color: #0000ff;
 }
 
 #btn_limpiar:hover{
@@ -95,7 +99,7 @@
     border: 2px solid #ff0000;
     cursor: pointer;
     background: #ffffff;
-    color: #000000;
+    color: #ff0000;
 }
 
 #impresion{
