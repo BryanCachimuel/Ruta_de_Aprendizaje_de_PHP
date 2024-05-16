@@ -127,6 +127,10 @@ table{
     border: 2px solid green; 
 }
 
+.espacio{
+    margin-bottom: 30px;
+}
+
 .sNeto{
     color: #0000ff;
     font-weight: bold;
