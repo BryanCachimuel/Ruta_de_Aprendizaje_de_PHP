@@ -7,11 +7,6 @@
     <link rel="stylesheet" href="publico/css/estilos.css">
 </head>
 <body>
-    <header>
-        <h3 id="centrado">PAGO DE SALARIO DE EMPLEADOS</h3>
-        <img src="publico/img/empleados.jpeg">
-    </header>
-
     <section>
         <form action="index.php" method="post" autocomplete="off">
             <h3 id="centrado">Formulario de Calculo</h3>
@@ -62,7 +57,7 @@
                     $descuento = $sBruto * (15/100);
                     $sNeto = $sBruto - $descuento;
                 ?>
-                <tr>
+                <tr class="espacio">
                     <td></td>
                 </tr>
                 <tr>
