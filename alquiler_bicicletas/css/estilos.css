@@ -18,6 +18,22 @@
     font-size: 20px;
 }
 
+.nombre{
+    padding: 5px;
+    border-radius: 5px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    margin-bottom: 7px;
+}
+
+.prenda{
+    padding: 5px;
+    border-radius: 5px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    margin-bottom: 7px;
+}
+
 #btn_procesar{
     width: 100px;
     font-weight: bold;
