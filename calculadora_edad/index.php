@@ -21,7 +21,7 @@
                 <span class="label label-success">
                     <span id="edadCalculada"></span>
                 </span>
-                
+
             </div>
         </div>
     </div>
@@ -37,6 +37,17 @@
             changeYear: true,
             yearRange: '1900:' + 2024,
             dateFormat: "yy-mm-dd"
+        });
+
+        $('#calendario').change(function(){
+            $.ajax({
+                type:"POST",
+                data:"fecha=" + $('#calendario').val(),
+                url:"php/calcularEdad.php",
+                success:function(r){
+                    $('#edadCalculada').text(r + "años");
+                }
+            });
         });
     });
 </script>
