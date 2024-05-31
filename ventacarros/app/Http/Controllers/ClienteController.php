@@ -37,7 +37,9 @@ class ClienteController extends Controller
         $clientes->celular_cliente = $request->input('celular_cliente');
         $clientes->direccion_cliente = $request->input('direccion_cliente');
         $clientes->save();
-        return redirect()->back();
+
+        /*return redirect()->back();*/
+        return redirect()->route('clientes.index')->with('mensaje','Cliente Registrado Correctamente');
     }
 
     /**
