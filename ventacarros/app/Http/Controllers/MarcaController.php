@@ -35,7 +35,9 @@ class MarcaController extends Controller
         $marcas->nombre_marca = $request->input('nombre_marca');
         $marcas->descripcion_marca = $request->input('descripcion_marca');
         $marcas->save();
-        return redirect()->back();
+        
+        //return redirect()->back();
+        return redirect()->route('marcas.index')->with('mensaje','Marca Registrada Correctamente');
     }
 
     /**
