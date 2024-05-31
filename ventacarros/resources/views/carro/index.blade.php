@@ -1,10 +1,21 @@
 @extends('welcome')
 
 @section('content')
+    @if ($message = Session::get('mensaje'))
+        <script>
+            Swal.fire({
+                title: "Proceso Exitoso",
+                text: "{{ $message }}",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 4500
+            });
+        </script>
+    @endif
 
-<button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#crearcarro">
-    Agregar Nuevo Carro
-</button>
+    <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#crearcarro">
+        Agregar Nuevo Carro
+    </button>
 
     <div class="table-responsive mt-5">
         <table class="table text-center">
@@ -23,26 +34,29 @@
             <tbody>
                 @foreach ($carros as $carro)
                     <tr class="">
-                        <td scope="row">{{$carro->id_carro}}</td>
-                        <td>{{$carro->Marca->nombre_marca}}</td>
-                        <td>{{$carro->Cliente->nombre_cliente}}</td>
-                        <td>{{$carro->descripcion_carro}}</td>
-                        <td>$ {{$carro->precio_carro}}</td>
-                        <td>{{$carro->cantidad_carro}}</td>
-                        <td scope="row">$ {{$carro->valor_total_carro}}</td>
+                        <td scope="row">{{ $carro->id_carro }}</td>
+                        <td>{{ $carro->Marca->nombre_marca }}</td>
+                        <td>{{ $carro->Cliente->nombre_cliente }}</td>
+                        <td>{{ $carro->descripcion_carro }}</td>
+                        <td>$ {{ $carro->precio_carro }}</td>
+                        <td>{{ $carro->cantidad_carro }}</td>
+                        <td scope="row">$ {{ $carro->valor_total_carro }}</td>
                         <td>
-                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editarcarro{{$carro->id_carro}}"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarcarro{{$carro->id_carro}}"><i class="fa-solid fa-trash-can"></i></button>
+                            <button class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#editarcarro{{ $carro->id_carro }}"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#eliminarcarro{{ $carro->id_carro }}"><i
+                                    class="fa-solid fa-trash-can"></i></button>
                         </td>
                     </tr>
-                <!-- invocando al modal de actualización marca -->
-                @include('carro.info')
+                    <!-- invocando al modal de actualización marca -->
+                    @include('carro.info')
                 @endforeach
             </tbody>
         </table>
     </div>
 
-<!-- invocando al modal de creacion marca -->
-@include('carro.create')
-
+    <!-- invocando al modal de creacion marca -->
+    @include('carro.create')
 @endsection
