@@ -2,9 +2,21 @@
 
 @section('content')
 
-<button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#crearmarca">
-    Agregar Nueva Marca
-</button>
+    @if ($message = Session::get('mensaje'))
+        <script>
+            Swal.fire({
+                title: "Proceso Exitoso",
+                text: "{{ $message }}",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 3500
+            });
+        </script>
+    @endif
+
+    <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#crearmarca">
+        Agregar Nueva Marca
+    </button>
 
     <div class="table-responsive mt-5">
         <table class="table">
@@ -19,22 +31,25 @@
             <tbody>
                 @foreach ($marcas as $marca)
                     <tr class="">
-                        <td scope="row">{{$marca->id_marca}}</td>
-                        <td>{{$marca->nombre_marca}}</td>
-                        <td>{{$marca->descripcion_marca}}</td>
+                        <td scope="row">{{ $marca->id_marca }}</td>
+                        <td>{{ $marca->nombre_marca }}</td>
+                        <td>{{ $marca->descripcion_marca }}</td>
                         <td>
-                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editarmarca{{$marca->id_marca}}"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarmarca{{$marca->id_marca}}"><i class="fa-solid fa-trash-can"></i></button>
+                            <button class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#editarmarca{{ $marca->id_marca }}"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#eliminarmarca{{ $marca->id_marca }}"><i
+                                    class="fa-solid fa-trash-can"></i></button>
                         </td>
                     </tr>
-                <!-- invocando al modal de actualización marca -->
-                @include('marca.info')
+                    <!-- invocando al modal de actualización marca -->
+                    @include('marca.info')
                 @endforeach
             </tbody>
         </table>
     </div>
 
-<!-- invocando al modal de creacion marca -->
-@include('marca.create')
-
+    <!-- invocando al modal de creacion marca -->
+    @include('marca.create')
 @endsection
