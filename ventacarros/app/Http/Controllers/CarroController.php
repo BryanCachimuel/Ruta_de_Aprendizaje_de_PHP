@@ -42,7 +42,9 @@ class CarroController extends Controller
         $carros->cantidad_carro = $request->input('cantidad_carro');
         $carros->valor_total_carro = $carros->precio_carro * $carros->cantidad_carro;
         $carros->save();
-        return redirect()->back();
+
+        //return redirect()->back();
+        return redirect()->route('carros.index')->with('mensaje','Carro Registrado Correctamente');
     }
 
     /**
