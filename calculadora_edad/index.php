@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container mt-3">
         <h3>Calcular edad Automaticaamente a partir de la fecha de nacimiento</h3>
         <div class="row">
             <div class="col-md-3">
