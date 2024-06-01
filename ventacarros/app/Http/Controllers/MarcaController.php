@@ -66,7 +66,8 @@ class MarcaController extends Controller
         $marcas->nombre_marca = $request->input('nombre_marca');
         $marcas->descripcion_marca = $request->input('descripcion_marca');
         $marcas->update();
-        return redirect()->back();
+        //return redirect()->back();
+        return redirect()->route('marcas.index')->with('mensaje','Marca Actualizada Correctamente');
     }
 
     /**
