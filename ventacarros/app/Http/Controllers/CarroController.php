@@ -86,6 +86,6 @@ class CarroController extends Controller
     {
         $carros = Carro::find($id_carro);
         $carros->delete();
-        return redirect()->back();
+        return redirect()->route('carros.index')->with('mensaje','Carro Eliminado Correctamente');
     }
 }
