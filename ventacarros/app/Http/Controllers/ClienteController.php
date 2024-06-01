@@ -81,6 +81,6 @@ class ClienteController extends Controller
     {
         $clientes = Cliente::find($id_cliente);
         $clientes->delete();
-        return redirect()->back();
+        return redirect()->route('clientes.index')->with('mensaje','Cliente Eliminado Correctamente');
     }
 }
