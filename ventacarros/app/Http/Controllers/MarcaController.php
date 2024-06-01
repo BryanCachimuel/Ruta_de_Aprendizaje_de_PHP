@@ -77,6 +77,6 @@ class MarcaController extends Controller
     {
         $marcas = Marca::find($id_marca);
         $marcas->delete();
-        return redirect()->back();
+        return redirect()->route('marcas.index')->with('mensaje','Marca Eliminada Correctamente');
     }
 }
