@@ -8,7 +8,7 @@
                 text: "{{ $message }}",
                 icon: "success",
                 showConfirmButton: false,
-                timer: 4500
+                timer: 3500
             });
         </script>
     @endif
