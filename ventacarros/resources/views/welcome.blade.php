@@ -24,17 +24,17 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
         <ul class="nav navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="{{ '/' }}" aria-current="page">VENTAS CARROS<span
+                <a class="nav-link active" href="{{ '/' }}" aria-current="page"><i class="fa-solid fa-house-chimney"></i> VENTAS CARROS<span
                         class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('marcas') }}">Marcas</a>
+                <a class="nav-link" href="{{ url('marcas') }}"><i class="fa-solid fa-copyright"></i> Marcas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('clientes') }}">Clientes</a>
+                <a class="nav-link" href="{{ url('clientes') }}"><i class="fa-solid fa-users-line"></i> Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('carros') }}">Carros</a>
+                <a class="nav-link" href="{{ url('carros') }}"><i class="fa-solid fa-car-side"></i> Carros</a>
             </li>
         </ul>
     </nav>
