@@ -47,8 +47,8 @@
                  </div>
 
                  <div class="modal-footer">
-                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                     <button type="submit" class="btn btn-primary">Guardar</button>
+                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i> Cancelar</button>
+                     <button type="submit" class="btn btn-primary"><i class="fa-solid fa-circle-plus"></i> Agregar</button>
                  </div>
 
              </form>
