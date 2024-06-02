@@ -14,7 +14,7 @@
     @endif
 
     <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#crearcarro">
-        Agregar Nuevo Carro
+        <i class="fa-solid fa-circle-plus"></i> Agregar Nuevo Carro
     </button>
 
     <div class="table-responsive mt-5">
