@@ -15,7 +15,7 @@
     @endif
 
     <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#crearcliente">
-        Agregar Nuevo Cliente
+        <i class="fa-solid fa-user-plus"></i> Agregar Nuevo Cliente
     </button>
 
     <div class="table-responsive mt-5">
