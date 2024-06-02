@@ -15,7 +15,7 @@
     @endif
 
     <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#crearmarca">
-        Agregar Nueva Marca
+        <i class="fa-solid fa-circle-plus"></i> Agregar Nueva Marca
     </button>
 
     <div class="table-responsive mt-5">
