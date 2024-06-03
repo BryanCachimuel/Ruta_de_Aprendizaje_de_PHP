@@ -24,7 +24,8 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
         <ul class="nav navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="{{ '/' }}" aria-current="page"><i class="fa-solid fa-house-chimney"></i> VENTAS CARROS<span
+                <a class="nav-link active" href="{{ '/' }}" aria-current="page"><i
+                        class="fa-solid fa-house-chimney"></i> VENTAS CARROS<span
                         class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
