@@ -2,12 +2,11 @@
 @section('content')
     <div class="row mt-5">
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Marcas
+            <div class="card bg-primary">
+                <div class="card-header text-white mx-auto">
+                    <h4>Marcas</h4>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Cantidad de Marcas: </h5>
+                <div class="card-body mx-auto">
                     @php
                         $contador_de_marcas = 0;
                     @endphp
@@ -17,20 +16,21 @@
                         @endphp
                     @endforeach
 
-                    <h3><?= $contador_de_marcas ?></h3>
+                    <h5 class="mb-4 mt-4 text-white">Cantidad de Marcas: <?= $contador_de_marcas ?></h5>
 
-                    <a href="{{ url('marcas') }}" class="btn btn-primary">Más Información</a>
+                </div>
+                <div class="card-footer text-body-secondary mx-auto">
+                    <a href="{{ url('marcas') }}" class="btn btn-outline-light"><i class="fa-solid fa-angles-right"></i> Más Información</a>
                 </div>
             </div>
         </div>
 
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Clientes
+            <div class="card bg-success">
+                <div class="card-header text-white mx-auto">
+                    <h4>Clientes</h4>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Cantidad de Clientes: </h5>
+                <div class="card-body mx-auto">
                     @php
                         $contador_de_clientes = 0;
                     @endphp
@@ -40,20 +40,22 @@
                         @endphp
                     @endforeach
 
-                    <h3><?= $contador_de_clientes ?></h3>
-
-                    <a href="{{ url('clientes') }}" class="btn btn-primary">Más Información</a>
+                    <h5 class="mb-4 mt-4  text-white">Cantidad de Clientes: <?= $contador_de_clientes ?></h5>
+                    
+                </div>
+                
+                <div class="card-footer text-body-secondary mx-auto">
+                    <a href="{{ url('clientes') }}" class="btn btn-outline-light"><i class="fa-solid fa-angles-right"></i> Más Información</a>
                 </div>
             </div>
         </div>
 
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Carros
+            <div class="card bg-danger">
+                <div class="card-header text-white mx-auto">
+                    <h4>Carros</h4>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Cantidad de Carros: </h5>
+                <div class="card-body mx-auto">
                     @php
                         $contador_de_carros = 0;
                     @endphp
@@ -63,9 +65,12 @@
                         @endphp
                     @endforeach
 
-                    <h3><?= $contador_de_carros ?></h3>
+                    <h5 class="mb-4 mt-4 text-white">Cantidad de Carros: <?= $contador_de_carros ?></h5>
 
-                    <a href="{{ url('carros') }}" class="btn btn-primary">Más Información</a>
+                </div>
+
+                <div class="card-footer text-body-secondary mx-auto">
+                    <a href="{{ url('carros') }}" class="btn btn-outline-light"><i class="fa-solid fa-angles-right"></i> Más Información</a>
                 </div>
             </div>
         </div>
