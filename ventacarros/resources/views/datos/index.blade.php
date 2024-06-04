@@ -1,7 +1,7 @@
 @extends('welcome')
 @section('content')
-    <div class="row mt-4">
-        <div class="col-md-3">
+    <div class="row mt-5">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
                     Marcas
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
                     Clientes
@@ -43,6 +43,29 @@
                     <h3><?= $contador_de_clientes ?></h3>
 
                     <a href="{{ url('clientes') }}" class="btn btn-primary">Más Información</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Carros
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Cantidad de Carros: </h5>
+                    @php
+                        $contador_de_carros = 0;
+                    @endphp
+                    @foreach ($carros as $carro)
+                        @php
+                            $contador_de_carros += 1;
+                        @endphp
+                    @endforeach
+
+                    <h3><?= $contador_de_carros ?></h3>
+
+                    <a href="{{ url('carros') }}" class="btn btn-primary">Más Información</a>
                 </div>
             </div>
         </div>
