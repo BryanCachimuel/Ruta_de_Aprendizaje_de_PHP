@@ -77,7 +77,7 @@
     <script type="text/javascript" language="javascript"
         src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
 
-    <!-- Datos del DataTable -->
+    <!-- Datos del DataTable de marcas -->
     <script>
         $(function () {
             $("#tablamarcas").DataTable({
@@ -128,6 +128,60 @@
                     }
                 ],
             }).buttons().container().appendTo('#tablamarcas_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+
+     <!-- Datos del DataTable de clientes -->
+     <script>
+        $(function () {
+            $("#tablaclientes").DataTable({
+                "pageLength": 10,
+                "language": {
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Clientes",
+                    "infoEmpty": "Mostrando 0 a 0 de 0 Clientes",
+                    "infoFiltered": "(Filtrado de MAX total Clientes)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar Menu de Clientes",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscador:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                },
+                "responsive": true, "lengthChange": true, "autoWidth": false,
+                buttons: [{
+                    extend: 'collection',
+                    text: 'Reportes',
+                    orientation: 'landscape',
+                    buttons: [{
+                        text: 'Copiar',
+                        extend: 'copy',
+                    }, {
+                        extend: 'pdf'
+                    },{
+                        extend: 'csv'
+                    },{
+                        extend: 'excel'
+                    },{
+                        text: 'Imprimir',
+                        extend: 'print'
+                    }
+                    ]
+                },
+                    {
+                        extend: 'colvis',
+                        text: 'Visor de columnas',
+                        collectionLayout: 'fixed three-column'
+                    }
+                ],
+            }).buttons().container().appendTo('#tablaclientes_wrapper .col-md-6:eq(0)');
         });
     </script>
 
