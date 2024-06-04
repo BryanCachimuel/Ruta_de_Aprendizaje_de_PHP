@@ -15,6 +15,9 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- DataTable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css">
+
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -67,6 +70,65 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Datos del DataTable -->
+    <script>
+        $(function () {
+            $("#tablamarcas").DataTable({
+                "pageLength": 10,
+                "language": {
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Marcas",
+                    "infoEmpty": "Mostrando 0 a 0 de 0 Miembros",
+                    "infoFiltered": "(Filtrado de MAX total Miembros)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar Menu de Marcas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscador:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                },
+                "responsive": true, "lengthChange": true, "autoWidth": false,
+                buttons: [{
+                    extend: 'collection',
+                    text: 'Reportes',
+                    orientation: 'landscape',
+                    buttons: [{
+                        text: 'Copiar',
+                        extend: 'copy',
+                    }, {
+                        extend: 'pdf'
+                    },{
+                        extend: 'csv'
+                    },{
+                        extend: 'excel'
+                    },{
+                        text: 'Imprimir',
+                        extend: 'print'
+                    }
+                    ]
+                },
+                    {
+                        extend: 'colvis',
+                        text: 'Visor de columnas',
+                        collectionLayout: 'fixed three-column'
+                    }
+                ],
+            }).buttons().container().appendTo('#tablamarcas_wrapper .col-md-6:eq(0)');
+        });
     </script>
 
 </body>
