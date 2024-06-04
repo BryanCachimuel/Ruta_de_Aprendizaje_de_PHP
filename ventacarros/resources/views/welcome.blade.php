@@ -185,6 +185,60 @@
         });
     </script>
 
+     <!-- Datos del DataTable de clientes -->
+     <script>
+        $(function () {
+            $("#tablacarros").DataTable({
+                "pageLength": 10,
+                "language": {
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Carros",
+                    "infoEmpty": "Mostrando 0 a 0 de 0 Carros",
+                    "infoFiltered": "(Filtrado de MAX total Carros)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar Menu de Carros",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscador:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                },
+                "responsive": true, "lengthChange": true, "autoWidth": false,
+                buttons: [{
+                    extend: 'collection',
+                    text: 'Reportes',
+                    orientation: 'landscape',
+                    buttons: [{
+                        text: 'Copiar',
+                        extend: 'copy',
+                    }, {
+                        extend: 'pdf'
+                    },{
+                        extend: 'csv'
+                    },{
+                        extend: 'excel'
+                    },{
+                        text: 'Imprimir',
+                        extend: 'print'
+                    }
+                    ]
+                },
+                    {
+                        extend: 'colvis',
+                        text: 'Visor de columnas',
+                        collectionLayout: 'fixed three-column'
+                    }
+                ],
+            }).buttons().container().appendTo('#tablacarros_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+
 </body>
 
 </html>
