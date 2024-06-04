@@ -19,7 +19,7 @@
     </button>
 
     <div class="table-responsive mt-5">
-        <table class="table">
+        <table class="table" id="tablamarcas">
             <thead class="bg-dark text-white">
                 <tr>
                     <th scope="col">ID</th>
