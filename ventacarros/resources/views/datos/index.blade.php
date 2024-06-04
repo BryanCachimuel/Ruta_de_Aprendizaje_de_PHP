@@ -23,5 +23,28 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Clientes
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Cantidad de Clientes: </h5>
+                    @php
+                        $contador_de_clientes = 0;
+                    @endphp
+                    @foreach ($clientes as $cliente)
+                        @php
+                            $contador_de_clientes += 1;
+                        @endphp
+                    @endforeach
+
+                    <h3><?= $contador_de_clientes ?></h3>
+
+                    <a href="{{ url('clientes') }}" class="btn btn-primary">Más Información</a>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
