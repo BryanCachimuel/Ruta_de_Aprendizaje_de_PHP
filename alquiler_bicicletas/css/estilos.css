@@ -5,11 +5,17 @@
     background: #acafb0;
 }
 
+body{
+    border: 22px solid #0000ff;
+    border-radius: 15px;
+    height: 100vh;
+}
+
 #centrado{
     text-align: center;
     color: #0000ff;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 60px;
+    margin-bottom: 30px;
     text-transform: uppercase;
 }
 
@@ -133,11 +139,12 @@
 #impresion{
     margin: auto;
     margin-top: 20px;
+    font-size: 20px;
 }
 
 #vTotalT{
     color: #ff1100;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 24px;
 }
 
