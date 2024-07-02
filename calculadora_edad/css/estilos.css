@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+body{
+    border: 25px inset #0099ff;
+    height: 100vh;
+}
+
 .titulo{
     margin-top: 50px;
+    margin-bottom: 30px;
+    color: #0099ff;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
 }
