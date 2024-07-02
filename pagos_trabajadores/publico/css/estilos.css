@@ -8,6 +8,12 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
+    border: 20px inset #ff0000b6;
+    height: 100vh;
+}
+
+section{
+    margin-top: 60px;
 }
 
 #centrado{
@@ -68,6 +74,7 @@ table{
     background: blue;
     border-radius: 5px;
     border: 2px solid blue;
+    transition: .7s;
 }
 
 .btn_limpiar{
@@ -79,6 +86,7 @@ table{
     background: red;
     border-radius: 5px;
     border: 2px solid red;
+    transition: .7s;
 }
 
 .btn_nuevo{
@@ -91,6 +99,7 @@ table{
     background: green;
     border-radius: 5px;
     border: 2px solid green; 
+    transition: .7s;
 }
 
 .btn_procesesar:hover{
