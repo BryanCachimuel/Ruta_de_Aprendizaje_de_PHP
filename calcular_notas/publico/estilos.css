@@ -2,14 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #00a6ff;
+}
+
+body{
+    border: 22px outset #04cc04c2;
+    height: 100vh;
 }
 
 .contenedor{
-   margin-top: 30px;
+   margin-top: 40px;
    width: auto;
    height: auto;
-   background: #00a6ff;
+   color: #008000;
+   font-weight: bold;
 }
 
 .titulo{
