@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alquiler de Bicicletas</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
@@ -16,28 +17,28 @@
         <table id="tabla">
             <form action="index.php" method="post" autocomplete="off">
                 <tr>
-                    <td width="200">Nombre Usuario</td>
+                    <td width="200"><i class="fa-regular fa-circle-user"></i> Nombre Usuario: </td>
                     <td>
                         <input type="text" class="nombre" name="txtNombre" size="40">
                     </td>
                 </tr>
 
                 <tr>
-                    <td width="200">Prenda Usuario</td>
+                    <td width="200"><i class="fa-solid fa-hand-holding-dollar"></i> Prenda Usuario: </td>
                     <td>
                         <input type="text" class="prenda" name="txtPrenda" size="40">
                     </td>
                 </tr>
 
                 <tr>
-                    <td width="200">Horas de Alquiler</td>
+                    <td width="200"><i class="fa-regular fa-clock"></i> Horas de Alquiler: </td>
                     <td>
                         <input type="text" class="horas" name="txtHoras" size="40">
                     </td>
                 </tr>
 
                 <tr>
-                    <td width="200">Valor de Alquiler</td>
+                    <td width="200"><i class="fa-regular fa-money-bill-1"></i> Valor de Alquiler: </td>
                     <td>
                         <input type="text" class="valor" name="txtValor" size="40">
                     </td>
