@@ -8,6 +8,8 @@
 body{
     font-size: 14px;
     font-family: Tahoma;
+    border: 18px solid #24aac2;
+    height: 100vh;
 }
 
 #centrado{
@@ -108,6 +110,13 @@ table{
     border: 2px solid #0000ff;
     margin-top: 10px;
     margin-bottom: 15px;
+    transition: .5s;
+}
+
+.btn_calcular:hover{
+    background-color: #ffffff;
+    border: 2px solid #0000ff;
+    color: #0000ff;
 }
 
 .promedio{
@@ -124,19 +133,6 @@ table{
     color: #ff0000;
 }
 
-.btn_procesar{
-    font-weight: bold;
-    border: none; 
-    color: #ffffff; 
-    padding: 10px 28px; 
-    cursor: pointer; 
-    border-radius: 5px; 
-    background-color: #0000ff;
-    border: 2px solid #0000ff;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-
 .btn_limpiar{
     font-weight: bold;
     border: none; 
@@ -148,6 +144,7 @@ table{
     border: 2px solid #ff0000;
     margin-top: 10px;
     margin-bottom: 15px;
+    transition: .5s;
 }
 
 .btn_nueva{
@@ -162,6 +159,7 @@ table{
     border: 2px solid #0cdf0c;
     margin-top: 10px;
     margin-bottom: 15px;
+    transition: .5s;
 }
 
 .btn_procesar:hover{
