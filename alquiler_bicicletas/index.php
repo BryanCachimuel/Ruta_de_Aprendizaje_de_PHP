@@ -79,27 +79,27 @@
         
         <table id="impresion">
                 <tr>
-                    <td>Nombre Usuario: </td>
+                    <td><i class="fa-regular fa-circle-user"></i> Nombre Usuario: </td>
                     <td><?php echo $nombre; ?></td>
                 </tr>
 
                 <tr align="center">
-                    <td>Prenda Usuario: </td>
+                    <td><i class="fa-solid fa-hand-holding-dollar"></i> Prenda Usuario: </td>
                     <td><?php echo $prenda; ?></td>
                 </tr>
 
                 <tr align="center">
-                    <td>Horas de Uso: </td>
+                    <td><i class="fa-regular fa-clock"></i> Horas de Uso: </td>
                     <td><?php echo $horas; ?></td>
                 </tr>
 
                 <tr align="center">
-                    <td>Valor por Hora: </td>
+                    <td><i class="fa-regular fa-money-bill-1"></i> Valor por Hora: </td>
                     <td><?php echo $valor; ?></td>
                 </tr>
 
                 <tr align="center">
-                    <td>I.V.A: </td>
+                    <td><i class="fa-solid fa-percent"></i> I.V.A: </td>
                     <td><?php echo $iva; ?></td>
                 </tr>
 
