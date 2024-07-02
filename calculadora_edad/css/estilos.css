@@ -17,3 +17,11 @@ body{
     font-size: 30px;
     text-align: center;
 }
+
+.seleccionar_fecha{
+    background-color: #07cf009d;
+}
+
+.resultado_fecha{
+    background-color: #0497ecb2;
+}
