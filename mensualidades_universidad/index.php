@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensualidades Universidad</title>
     <link rel="stylesheet" href="publico/css/estilos.css">
 </head>
-<body>
-    <header>
-        <h3 id="centrado">Mensualidad Universitaria</h3>
-        <img src="publico/img/estudiantes.jpg" alt="estudiantes">
-    </header>
 
+<body>
     <section>
 
-    <?php
+        <?php
         error_reporting(0);
 
         $estudiante = $_POST['txtEstudiante'];
@@ -23,13 +20,13 @@
         $notaDos = $_POST['txtNota2'];
         $notaTres = $_POST['txtNota3'];
 
-        if($categoria == "A") $selA = 'SELECTED';
+        if ($categoria == "A") $selA = 'SELECTED';
         else $selA = '';
-        if($categoria == "B") $selB = 'SELECTED';
+        if ($categoria == "B") $selB = 'SELECTED';
         else $selB = '';
-        if($categoria == "C") $selC = 'SELECTED';
+        if ($categoria == "C") $selC = 'SELECTED';
         else $selC = '';
-        if($categoria == "D") $selD = 'SELECTED';
+        if ($categoria == "D") $selD = 'SELECTED';
         else $selD = '';
 
         $aMensaje = "";
@@ -38,21 +35,21 @@
         $nMensajeDos = "";
         $nMensajeTres = "";
 
-       if(isset($_POST['btnEnviar'])){
-            if(empty($estudiante)) $aMensaje = "Debe Ingresar el nombre del estudiante";
-            if($categoria == "Seleccione") $cMensaje = "Debe Seleccionar una Categoría";
-            if(empty($notaUno) || !is_numeric($notaUno)) $nMensajeUno = "Debe Ingresar Correctamente su Nota 1";
-            elseif($notaUno < 1 || $notaUno > 10) $nMensajeUno = "La Nota 1 debe ser entre 1 y 10";
-            if(empty($notaDos) || !is_numeric($notaDos)) $nMensajeDos = "Debe Ingresar Correctamente su Nota 2";
-            elseif($notaDos < 1 || $notaDos > 10) $nMensajeDos = "La Nota 2 debe ser entre 1 y 10";
-            if(empty($notaTres) || !is_numeric($notaTres)) $nMensajeTres = "Debe Ingresar Correctamente su Nota 3";
-            elseif($notaTres < 1 || $notaTres > 10) $nMensajeTres = "La Nota 3 debe ser entre 1 y 10";
-       }
+        if (isset($_POST['btnEnviar'])) {
+            if (empty($estudiante)) $aMensaje = "Debe Ingresar el nombre del estudiante";
+            if ($categoria == "Seleccione") $cMensaje = "Debe Seleccionar una Categoría";
+            if (empty($notaUno) || !is_numeric($notaUno)) $nMensajeUno = "Debe Ingresar Correctamente su Nota 1";
+            elseif ($notaUno < 1 || $notaUno > 10) $nMensajeUno = "La Nota 1 debe ser entre 1 y 10";
+            if (empty($notaDos) || !is_numeric($notaDos)) $nMensajeDos = "Debe Ingresar Correctamente su Nota 2";
+            elseif ($notaDos < 1 || $notaDos > 10) $nMensajeDos = "La Nota 2 debe ser entre 1 y 10";
+            if (empty($notaTres) || !is_numeric($notaTres)) $nMensajeTres = "Debe Ingresar Correctamente su Nota 3";
+            elseif ($notaTres < 1 || $notaTres > 10) $nMensajeTres = "La Nota 3 debe ser entre 1 y 10";
+        }
 
-       if(isset($_POST['btnCalcular'])){
-            $promedio = (($notaUno + $notaDos + $notaTres)/3);
-       }
-    ?>
+        if (isset($_POST['btnCalcular'])) {
+            $promedio = (($notaUno + $notaDos + $notaTres) / 3);
+        }
+        ?>
 
         <form action="index.php" method="post" autocomplete="off">
             <table>
@@ -88,8 +85,8 @@
                 </tr>
 
                 <tr>
-                    
-                <td>Nota 2</td>
+
+                    <td>Nota 2</td>
                     <td>
                         <input class="nota2" type="text" name="txtNota2" value="<?php echo $notaDos; ?>">
                     </td>
@@ -113,26 +110,25 @@
                 </tr>
 
                 <?php
-                    if(!empty($estudiante) && $categoria != "Seleccione" && $promedio >= 1 && $promedio <= 10){
-                        if($categoria == "A") $montoMensual = 850;
-                        if($categoria == "B") $montoMensual = 750;
-                        if($categoria == "C") $montoMensual = 650;
-                        if($categoria == "D") $montoMensual = 550;
+                if (!empty($estudiante) && $categoria != "Seleccione" && $promedio >= 1 && $promedio <= 10) {
+                    if ($categoria == "A") $montoMensual = 850;
+                    if ($categoria == "B") $montoMensual = 750;
+                    if ($categoria == "C") $montoMensual = 650;
+                    if ($categoria == "D") $montoMensual = 550;
 
-                        if($promedio < 6) $descuento = 0;
-                        if($promedio >= 7) $descuento = (20/100) * $montoMensual; 
-                        if($promedio >= 8) $descuento = (30/100) * $montoMensual;
-                        if($promedio >= 9) $descuento = (40/100) * $montoMensual;
-                        if($promedio >= 10) $descuento = (50/100) * $montoMensual;
+                    if ($promedio < 6) $descuento = 0;
+                    if ($promedio >= 7) $descuento = (20 / 100) * $montoMensual;
+                    if ($promedio >= 8) $descuento = (30 / 100) * $montoMensual;
+                    if ($promedio >= 9) $descuento = (40 / 100) * $montoMensual;
+                    if ($promedio >= 10) $descuento = (50 / 100) * $montoMensual;
 
-                        $montoCancelar = $montoMensual - $descuento;
-                    }
+                    $montoCancelar = $montoMensual - $descuento;
+                }
                 ?>
 
                 <tr>
                     <td></td>
                     <td>
-                        <button type="submit" class="btn_procesar" name="btnEnviar">Procesar</button>
                         <button type="submit" class="btn_limpiar">Limpiar</button>
                         <a href="index.php" class="btn_nueva">Nueva Consulta</a>
                     </td>
@@ -145,7 +141,7 @@
 
                 <tr>
                     <td>Monto Descuento: </td>
-                    <td>$ <?php echo number_format($descuento, 2, '.', ','); ?></td> 
+                    <td>$ <?php echo number_format($descuento, 2, '.', ','); ?></td>
                 </tr>
 
                 <tr>
@@ -158,7 +154,8 @@
     </section>
 
     <footer>
-        <h6 id="centrado"> los Derechos Reservados Rixler Corp  <?php echo date('Y')?></h6>
+        <h6 id="centrado"> los Derechos Reservados Rixler Corp <?php echo date('Y') ?></h6>
     </footer>
 </body>
+
 </html>
