@@ -6,6 +6,12 @@
     background-color: #d1c8c8;
 }
 
+body{
+    border: 20px solid #ff0000;
+    height: 100vh;
+    border-radius: 10px;
+}
+
 .titulo{
     margin-top: 30px;
     margin-bottom: 30px;
