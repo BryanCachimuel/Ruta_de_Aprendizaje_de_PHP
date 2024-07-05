@@ -56,14 +56,6 @@ section{
     background-color: white;
 }
 
-img{
-    width: 656px;
-    height: 370px;
-    margin: auto;
-    display: block;
-    border: 1px solid #c0c0c0;
-}
-
 table{
     margin: auto;
 }
@@ -71,6 +63,7 @@ table{
 .btn_procesesar{
     margin-top: 20px;
     width: 90px;
+    height: 40px;
     color: white;
     font-weight: bold;
     padding: 5px;
@@ -83,6 +76,7 @@ table{
 .btn_limpiar{
     margin-top: 20px;
     width: 90px;
+    height: 40px;
     color: white;
     font-weight: bold;
     padding: 5px;
@@ -96,6 +90,7 @@ table{
     text-decoration: none;
     margin-top: 20px;
     width: 90px;
+    height: 40px;
     color: white;
     font-weight: bold;
     padding: 5px;
