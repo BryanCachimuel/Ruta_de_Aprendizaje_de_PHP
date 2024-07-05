@@ -26,6 +26,7 @@ section{
 .empleado{
     width: 400px;
     padding: 5px;
+    height: 35px;
     margin-top: 10px;
     margin-bottom: 15px;
     border-radius: 4px;
@@ -36,6 +37,7 @@ section{
 .horas{
     width: 400px;
     padding: 5px;
+    height: 35px;
     margin-top: 10px;
     margin-bottom: 15px;
     border-radius: 4px;
@@ -46,6 +48,7 @@ section{
 .selCategorias{
     width: 400px;
     padding: 5px;
+    height: 35px;
     margin-top: 10px;
     margin-bottom: 15px;
     border-radius: 4px;
