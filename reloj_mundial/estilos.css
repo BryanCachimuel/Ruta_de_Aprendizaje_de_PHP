@@ -1,5 +1,7 @@
 .cuerpo{
     background-color: #808080;
+    border: 20px solid #00e1ff9f;
+    height: 100%;
 }
 
 .titulo{
@@ -10,4 +12,8 @@
     font-weight: bold;
     font-size: 60px;
     color: #ffff00;
+}
+
+.container{
+    margin-bottom: 35px;
 }
