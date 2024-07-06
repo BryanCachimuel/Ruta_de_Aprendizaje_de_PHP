@@ -2,11 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #ffa6006b;
 }
 
 body{
     border: 22px outset #04cc04c2;
     height: 100vh;
+    border-radius: 10px;
 }
 
 .contenedor{
