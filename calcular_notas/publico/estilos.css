@@ -57,13 +57,13 @@ body{
 }
 
 .consulta{
-    width: 150px;
+    width: 90px;
     height: 40px;
     text-decoration: none;
     padding: 5px;
     border: 2px solid #ff00ff;
     border-radius: 5px;
-    margin-left: 80px;
+    margin-left: 60px;
     background-color: #ff00ff;
     color: #ffffff;
     cursor: pointer;
