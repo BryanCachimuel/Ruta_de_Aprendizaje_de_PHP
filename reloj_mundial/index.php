@@ -12,7 +12,7 @@
 
 <body class="cuerpo">
 
-    <h1 class="titulo">Horario Mundial</h1>
+    <h1 class="titulo"><i class="fa-regular fa-clock"></i> Horario Mundial</h1>
 
     <?php
     date_default_timezone_set('America/Vancouver');
@@ -233,7 +233,7 @@
         $pitcairn = '<strong>Pitcairn:</strong> ' . date('H:i:s');
         ?>
 
-        <div class="row mt-4">
+        <!--<div class="row mt-4">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
@@ -268,7 +268,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
     </div>
 
