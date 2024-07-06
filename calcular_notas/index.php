@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcular Promedio</title>
     <link rel="stylesheet" href="publico/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <div class="contenedor">
-        <h1 class="titulo">Calculador de Notas</h1>
+        <h1 class="titulo"><i class="fa-solid fa-calculator"></i> Calculador de Notas</h1>
         <form class="formulario_cantidad" action="index.php" method="post" autocomplete="off">
             <p>
                 Cantidad de Notas:
                 <input type="text" name="txtCantidad" id="txtCantidad">
             </p>
             <p>
-                <button class="boton_ingresar" type="submit">Ingresar Notas</button>
-                <a class="consulta" href="index.php">Nueva Consulta</a>
+                <button class="boton_ingresar" type="submit"><i class="fa-solid fa-keyboard"></i> Ingresar Notas</button>
+                <a class="consulta" href="index.php"><i class="fa-solid fa-circle-plus"></i> Nueva Consulta</a>
             </p>
         </form>
 
