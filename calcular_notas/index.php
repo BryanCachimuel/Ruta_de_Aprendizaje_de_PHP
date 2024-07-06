@@ -41,7 +41,7 @@
                     $i++;
                 }
                 ?>
-                <button class="boton_calcular" type="submit">Calcular</button>
+                <button class="boton_calcular" type="submit"><i class="fa-solid fa-calculator"></i> Calcular</button>
             </form>
         <?php
         }
