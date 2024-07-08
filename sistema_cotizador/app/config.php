@@ -19,7 +19,10 @@ define('MODULES', TEMPLATES . 'modules' . DS);
 define('VIEWS', TEMPLATES . 'viiews' . DS);
 define('UPLOADS', ROOT . 'uploads' . DS);
 
-/*Para archivos que vayamos a incluir en header o footer (css o js) */
+/* Para archivos que vayamos a incluir en header o footer (css o js) */
 define('CSS', URL . 'assets/css/');
 define('IMG', URL . 'assets/img/');
 define('JS', URL . 'assets/js/');
+
+/* Cargar todas las funciones */
+require_once APP.'functions.php';
