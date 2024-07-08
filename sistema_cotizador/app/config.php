@@ -7,4 +7,15 @@ define('IS_LOCAL', in_array($_SERVER['REMOTE_ADDR'],['127.0.0.1','::1']));
 $web_url = IS_LOCAL ? 'http://127.0.0.1/ejercicios_de_Repaso_PHP/sistema_cotizador/' : 'LA URL DE SU SERVIDOR EN PRODUCCIÓN';
 
 define('URL', $web_url);
+
+/* Rutas para las carpetas en disco duro */
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', getcwd().DS);
+define('APP', ROOT.'app'.DS);
+define('ASSETS', ROOT.'assets'.DS);
+define('TEMPLATES',ROOT.'templates'.DS);
+define('INCLUDES',TEMPLATES.'includes'.DS);
+define('MODULES',TEMPLATES.'modules'.DS);
+define('VIEWS', TEMPLATES.'viiews'.DS);
+
 ?>
