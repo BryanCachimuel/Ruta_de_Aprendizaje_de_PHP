@@ -137,15 +137,15 @@
                                     <td class="text-center">$498.00</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right" colspan="3">Subtotal</td>
+                                    <td style="text-align: right;" colspan="3">Subtotal</td>
                                     <td class="text-center">$123.00</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right" colspan="3">Impuestos</td>
+                                    <td style="text-align: right;" colspan="3">Impuestos</td>
                                     <td class="text-center">$123.00</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right" colspan="3">Envio</td>
+                                    <td class="text-right"style="text-align: right;" colspan="3">Envio</td>
                                     <td class="text-center">$50.00</td>
                                 </tr>
                                 <tr>
