@@ -201,6 +201,7 @@ $("document").ready(() => {
     }).done(res => {
       if(res.status === 200){
         $('#id_concepto', form_update_concept).val(res.data.id);
+        $('#concepto', form_update_concept).val(res.data.concepto);
         $('#tipo option[value="'+res.data.type+'"]', form_update_concept).attr('selected', true);
         $('#cantidad', form_update_concept).val(res.data.quamtity);
         $('#precio_unitario', form_update_concept).val(res.data.price);
@@ -214,5 +215,67 @@ $("document").ready(() => {
     }).always(() => {
       $('body').waiMe('hide');
     });
+  }
+
+  // Función guardar cambios de concepto editado
+  $('#save_concept').on('submit', save_concept);
+  function save_concept(e){
+    e.preventDefault();
+    
+    let form = $('#save_concept'),
+    action = 'save_concept',
+    data = new FormData(form.get(0)),
+    wrapper_update_concept = $('.wrapper_update_concept'),
+    errors = 0;
+
+    // Agregar la acción al objeto data
+    data.append('action', action);
+
+    // Validar el concepto
+    let concepto = $('#concepto', form).val(),
+    precio = parseFloat($('#precio_unitario', form).val());
+
+    if(concepto.length < 5){
+      notify('Ingresa un Concepto válido por favor.', 'danger');
+      errors++;
+    }
+
+    // Validar el precio
+    if(precio < 10){
+      notify('Por favor ingresa un precio mayor a $10.00','danger');
+      errors++;
+    }
+    if(errors > 0){
+      notify('Completa el formulario','danger');
+      return false;
+    }
+
+    $.ajax({
+      url : 'ajax.php',
+      type : 'POST',
+      dataType : 'json',
+      cache : false,
+      processData : false,
+      contentType : false,
+      data : data,
+      beforeSend: () => {
+        form.waiMe();
+      } 
+    }).done(res => {
+      if(res.status === 200){
+        wrapper_update_concept.fadeOut();
+        form.trigger('reset'); 
+        notify(res.msg);
+        get_quote();
+      }else{
+        notify(res.msg, 'danger');
+      }
+    }).fail(err =>{
+      notify('Hubo un problema con la petición, intenta de nuevo','danger');
+      wrapper_update_concept.fadeOut();
+      form.trigger('reset');
+    }).always(() => {
+      form.waiMe('hide');
+    }); 
   }
 });
