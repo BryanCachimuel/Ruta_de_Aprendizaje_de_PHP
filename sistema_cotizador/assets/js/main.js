@@ -177,4 +177,42 @@ $("document").ready(() => {
       $('body').waiMe('hide');
     });
   }
+
+  // Función cargar un solo concepto
+  $('body').on('click', '.edit_concept', edit_concept);
+  function edit_concept(e){
+    e.preventDefault();
+
+    let button = $(this),
+    id = button.data('id'),
+    action = 'edit_concept',
+    wrapper_update_concept = $('.wrapper_update_concept'),
+    form_update_concept = $('#save_concept')
+
+    // Petición
+    $.ajax({
+      url : 'ajax.php',
+      type : 'post',
+      dataType: 'json',
+      data : {action, id},
+      beforeSend: () => {
+        $('body').waiMe();
+      }
+    }).done(res => {
+      if(res.status === 200){
+        $('#id_concepto', form_update_concept).val(res.data.id);
+        $('#tipo option[value="'+res.data.type+'"]', form_update_concept).attr('selected', true);
+        $('#cantidad', form_update_concept).val(res.data.quamtity);
+        $('#precio_unitario', form_update_concept).val(res.data.price);
+        wrapper_update_concept.fadeIn();
+        notify(res.msg);
+      }else{
+        notify(res.msg, 'danger');
+      }
+    }).fail(err => {
+      notify('Hubo un problema con la petición', 'danger');
+    }).always(() => {
+      $('body').waiMe('hide');
+    });
+  }
 });
