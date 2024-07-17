@@ -285,3 +285,16 @@ function hook_restart_quote(){
     }
     json_output(json_build(200, get_quote(), 'La cotización se ha reiniciado con exito'));
 }
+
+// Borrar un concepto de la cotización
+function hook_delete_concept(){
+    if(!isset($_POST['id'])){
+        json_output(json_build(400, null, 'Parámetros Incompletos'));
+    }
+
+    if(!delete_item((int) $_POST['id'])){
+        json_output(json_build(400, null, 'Hubo un problema al borrar el concepto'));
+    }
+
+    json_output(json_build(200, get_quote(), 'Concepto Borrado con Éxito'));
+}
