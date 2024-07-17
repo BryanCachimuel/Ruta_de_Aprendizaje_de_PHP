@@ -77,7 +77,7 @@
 
         <div class="col-lg-5 col-12">
 
-            <div class="wrapper_update_concept d-none">
+            <div class="wrapper_update_concept" style="display:none;">
                 <div class="card mb-3">
                     <div class="card-header">Editando Concepto</div>
                     <div class="card-body">
@@ -114,7 +114,7 @@
                             </div>
                             <br>
                             <button class="btn btn-success" type="submit">Guardar Concepto</button>
-                            <button class="btn btn-danger" type="reset">Cancelar</button>
+                            <button class="btn btn-danger" type="reset" id="cancel_edit">Cancelar</button>
                         </form>
                     </div>
                 </div>
