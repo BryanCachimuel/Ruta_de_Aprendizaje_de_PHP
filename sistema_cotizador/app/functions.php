@@ -271,3 +271,17 @@ function hook_add_to_quote(){
     json_output(json_build(201, get_item($item['id']), 'Concepto Agregado con Exito'));
     exit;
 }
+
+// Reiniciar la cotización
+function hook_restart_quote(){
+    $item = get_items();
+
+    if(empty($items)){
+        json_output(400, null, 'No es necesario reiniciar la cotización, no hay conceptos en ella');
+    }   
+
+    if(!restart_quote()){
+        json_output((json_build(400, null, 'Hubo un problema al reiniciar la cotización')));
+    }
+    json_output(json_build(200, get_quote(), 'La cotización se ha reiniciado con exito'));
+}
