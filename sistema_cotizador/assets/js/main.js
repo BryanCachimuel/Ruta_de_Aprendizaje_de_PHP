@@ -116,4 +116,32 @@ $("document").ready(() => {
       form.waiMe('hide');
     })
   }
+
+  // Función para reiniciar la cotización
+  $('.restart_quote').on('click', restart_quote);
+  function restart_quote(e){
+    e.preventDefault();
+    let button = $(this),
+    action = 'restart_quote';
+
+    if(!confirm('¿Estás Seguro?')) return false;
+
+    $.ajax({
+      url : 'ajax.php',
+      type : 'post',
+      dataType: 'json',
+      data : {action}
+    }).done(res => {
+      if(res.status === 200){
+        notify(res.msg);
+        get_quote();
+      }else{
+        notify(res.msg, 'danger');
+      }
+    }).fail(err => {
+      notify('Hubo un problema con la petición. ' + 'danger');
+    }).always(() => {
+      
+    });
+  }
 });
