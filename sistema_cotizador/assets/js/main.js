@@ -141,7 +141,40 @@ $("document").ready(() => {
     }).fail(err => {
       notify('Hubo un problema con la petición. ' + 'danger');
     }).always(() => {
-      
+
+    });
+  }
+
+  // función para borrar un concepto
+  $('body').on('click','.delete_concept', delete_concept);
+  function delete_concept(e){
+    e.preventDefault();
+
+    let button = $(this),
+    id = button.data('id'),
+    action = 'delete_concept';
+
+    if(!confirm('¿Estás seguro?')) return false;
+
+    // Petición
+    $.ajax({
+      url : 'ajax.php',
+      type : 'post',
+      dataType : {action, id},
+      beforeSend: () => {
+        $('body').waiMe();
+      }
+    }).done(res => {
+      if(res.status === 200){
+        notify(res.msg);
+        get_quote();
+      }else{
+        notify(res.msg, 'danger')
+      }
+    }).fail(err => {
+      notify('Hubo un problema con la petición.', 'danger');
+    }).always(() => {
+      $('body').waiMe('hide');
     });
   }
 });
