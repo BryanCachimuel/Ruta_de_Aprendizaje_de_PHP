@@ -278,4 +278,17 @@ $("document").ready(() => {
       form.waiMe('hide');
     }); 
   }
+
+  // Enviar por correo electronico
+  $('#cancel_edit').on('click', (e) => {
+    e.preventDefault();
+
+    let button = $(this),
+    wrapper = $('.wrapper_update_concept'),
+    form = $('#save_concept');
+
+    wrapper.fadeOut();
+    form.trigger('reset');
+  });
+  
 });
