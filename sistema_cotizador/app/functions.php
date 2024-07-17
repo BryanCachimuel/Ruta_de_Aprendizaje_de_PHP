@@ -298,3 +298,14 @@ function hook_delete_concept(){
 
     json_output(json_build(200, get_quote(), 'Concepto Borrado con Éxito'));
 }
+
+// Cargar un concepto para editar
+function hook_edit_concept(){
+    if(!isset($_POST['id'])){
+        json_output(json_build(403, null, 'Parámetros Incompletos'));
+    }
+    if(!$item = get_item((int) $_POST['id'])){
+        json_output(json_build(400, null, 'Hubo un problema al cargar el concepto'));
+    }
+    json_output(json_build(200, $item, 'Concepto cargado con éxito'));
+}
