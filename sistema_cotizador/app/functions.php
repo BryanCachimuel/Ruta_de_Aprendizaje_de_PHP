@@ -1,5 +1,7 @@
 <?php
 
+use Dompdf\Dompdf;
+
 function get_view($view_name){
     $view = VIEWS.$view_name;
     // en caso de no existir la vista
@@ -339,4 +341,20 @@ function hook_save_concept(){
         json_output(json_build(400, null, 'Hubo un problema al guardar los cambios del concepto'));
     }
     json_output(json_build(200, get_item($id), 'Cambios guardados con éxito'));
+}
+
+// Generar un PDF
+function generate_pdf($filename = null, $html){
+    $filename = $filename === null ? time().'.pdf' : $filename.'.pdf';
+    // Instancia de la clase
+    $pdf = new Dompdf();
+
+    // Formato
+    $pdf->setPaper('A4');
+
+    // Contenido
+    $pdf->loadHtml($html);
+    $pdf->render();
+    $pdf->stream($filename);
+    return true;
 }
