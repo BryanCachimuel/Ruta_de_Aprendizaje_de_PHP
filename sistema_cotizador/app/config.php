@@ -30,5 +30,8 @@ define('APP_NAME', 'Sistema Cotizador');
 define('TAXES_RATE', 16);
 define('SHIPPING', 99.50);
 
+/* Autoload Composer */
+require_once ROOT.'vendor/autoload.php';
+
 /* Cargar todas las funciones */
 require_once APP.'functions.php';
