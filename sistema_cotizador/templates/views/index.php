@@ -130,8 +130,9 @@
 
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary">Descargar PDF</button>
-                    <button class="btn btn-success">Enviar por Correo</button>
+                    <button class="btn btn-success" id="generate_quote">Generar Cotización</button>
+                    <button class="btn btn-primary" id="download_quote" style="display: none;">Descargar PDF</button>
+                    <button class="btn btn-success" id="send_quote" style="display: none;">Enviar por Correo</button>
                 </div>
             </div>
         </div>
