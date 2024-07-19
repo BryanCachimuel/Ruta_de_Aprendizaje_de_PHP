@@ -3,3 +3,8 @@ cursos_vacacionales/vendor
 venta_entradas/publico/img
 mensualidades_universidad/publico/img
 pagos_trabajadores/publico/img
+sistema_cotizador/vendor/dompdf
+sistema_cotizador/vendor/phpmailer
+sistema_cotizador/vendor/masterminds
+sistema_cotizador/vendor/sabberworm
+sistema_cotizador/assets/img
