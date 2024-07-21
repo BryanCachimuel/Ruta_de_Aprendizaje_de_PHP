@@ -31,6 +31,13 @@ function get_quote(){
     return $_SESSION['new_quote'];
 }
 
+function set_client($client){
+    $_SESSION['new_quote']['name'] = trim($client['nombre']);
+    $_SESSION['new_quote']['company'] = trim($client['empresa']);
+    $_SESSION['new_quote']['email'] = trim($client['email']);
+    return true;
+}
+
 function recalculate_quote(){
     $items = [];
     $subtotal = 0;
