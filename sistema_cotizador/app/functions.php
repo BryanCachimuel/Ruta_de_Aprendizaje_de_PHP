@@ -351,7 +351,7 @@ function hook_save_concept(){
 }
 
 // Generar un PDF
-function generate_pdf($filename = null, $html){
+function generate_pdf($filename = null, $html, $save_to_file = true){
     $filename = $filename === null ? time().'.pdf' : $filename.'.pdf';
     // Instancia de la clase
     $pdf = new Dompdf();
@@ -362,6 +362,13 @@ function generate_pdf($filename = null, $html){
     // Contenido
     $pdf->loadHtml($html);
     $pdf->render();
+
+    if($save_to_file){
+        $output = $pdf->output();
+        file_put_contents($filename, $output);
+        return true;
+    }
+
     $pdf->stream($filename);
     return true;
 }
@@ -385,4 +392,23 @@ function hook_generate_quote(){
         'email' => $_POST['email']
     ];
     set_client($client);
+
+    // cargar cotización
+    $quote = get_quote();
+
+    if(empty($quote['items'])){
+        json_output(json_build(400, null, 'No hay conceptos en la cotización'));
+    }
+
+    $module = MODULES.'pdf_template';
+    $html = get_module($module, $quote);
+    $filename = 'coty_'.$quote['number'];
+    $download = URL.UPLOADS.$filename;
+    $quote['url'] = $download;
+
+    // Generar pdf y guardar en servidor
+    if(!generate_pdf(UPLOADS.$filename, $html)){
+        json_output(json_build(400,null,'Hubo un problema al generar la cotización'));
+    }
+    json_output(json_build(200, $quote, 'Cotización generada con éxito'));
 }
