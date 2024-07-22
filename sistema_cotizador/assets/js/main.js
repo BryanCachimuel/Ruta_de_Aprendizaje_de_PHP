@@ -290,5 +290,71 @@ $("document").ready(() => {
     wrapper.fadeOut();
     form.trigger('reset');
   });
-  
+
+  // Función para Generar la cotización
+  $('#generate_quote').on('click', generate_quote)
+  function generate_quote(e){
+    e.preventDefault();
+
+    let button = $(this),
+    default_text = button.html(), // Generar
+    new_text = 'Volver a Generar',
+    dowload = $('#download_quote'),
+    send = $('#send_quote'),
+    nombre = $('#nombre').val(),
+    empresa = $('#empresa').val(),
+    email = $('#email').val(),
+    action = 'generate_quote',
+    errors = 0
+
+    // Validando la acción
+    if(!confirm('¿Estás seguro?')) return false;
+
+    // Validando la información
+    if(nombre.length < 5){
+      notify('Ingresa un nombre para el cliente por favor','danger');
+      errors++;
+    }
+    if(empresa.length < 5){
+      notify('Ingresa una empresa válida por favor','danger');
+      errors++;
+    }
+    if(email.length < 5){
+      notify('Ingrese una dirección de correo válida por favor','danger');
+      errors++;
+    }
+    if(errors > 0){
+      return false;
+    }
+
+    // Petición
+    $.ajax({
+      url : 'ajax.php',
+      type : 'POST',
+      dataType : 'json',
+      cache : false,
+      data : {action, nombre, empresa, email},
+      beforeSend: () => {
+        $('body').waiMe();
+        button.html('Generando...')
+      }
+    }).done(res => {
+      if(res.status === 200){
+        notify(res.msg);
+        dowload.fadeIn();
+        send.fadeIn();
+        button.html(new_text);
+      }else{
+        notify(res.msg, 'danger');
+        dowload.fadeOut();
+        send.fadeOut();
+        button.html('Reintentar');
+      }
+    }).fail(err => {
+      notify('Hubo un problema con la petición, intenta de nuevo','danger');
+      button.html(default_text);
+    }).always(() => {
+      $('body').waiMe('hide');
+    });
+  } 
 });
