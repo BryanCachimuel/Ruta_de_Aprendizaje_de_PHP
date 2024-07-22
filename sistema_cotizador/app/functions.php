@@ -365,3 +365,24 @@ function generate_pdf($filename = null, $html){
     $pdf->stream($filename);
     return true;
 }
+
+// Crear el pdf de la cotización
+function hook_generate_quote(){
+    // Validar
+    if(!isset($_POST['nombre'], $_POST['empresa'], $_POST['email'])){
+        json_output(json_build(403, null, 'Parámetros Incompletos'));
+    }
+
+    // Validar Correo
+    if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+        json_output(json_build(400, null, 'Dirección de Correo No Válida'));
+    }
+
+    // Guardar información del cliente
+    $client = [
+        'nombre' => $_POST['nombre'],
+        'empresa' => $_POST['empresa'],
+        'email' => $_POST['email']
+    ];
+    set_client($client);
+}
