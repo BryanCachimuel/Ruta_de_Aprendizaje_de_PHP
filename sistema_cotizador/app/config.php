@@ -18,7 +18,7 @@ define('TEMPLATES', ROOT . 'templates' . DS);
 define('INCLUDES', TEMPLATES . 'includes' . DS);
 define('MODULES', TEMPLATES . 'modules' . DS);
 define('VIEWS', TEMPLATES . 'views' . DS);
-define('UPLOADS', ROOT . 'uploads' . DS);
+define('UPLOADS', 'assets/uploads/');
 
 /* Para archivos que vayamos a incluir en header o footer (css o js) */
 define('CSS', URL . 'assets/css/');
