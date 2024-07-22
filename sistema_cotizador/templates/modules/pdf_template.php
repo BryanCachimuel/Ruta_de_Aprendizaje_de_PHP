@@ -45,7 +45,7 @@
     <table width="100%">
        <tr>
         <td><strong>De:</strong> Jhon Doe - Joystick</td>
-        <td><strong>Para:</strong> Cliente - Empresa (email@empresa.com)</td>
+        <td><strong>Para:</strong><?php echo sprintf('%s - %s (%s)', $d->name, $d->company, $d->email)?></td>
        </tr> 
     </table>
 
@@ -63,50 +63,41 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Playstation IV - Black</td>
-                <td align="right">$1400.00</td>
-                <td align="center">1</td>
-                <td align="right">$1400.00</td>
-            </tr>
-            <tr>
-                <th scope="1"></th>
-                <td>Metal Gear Solid - Phantom</td>
-                <td align="right">$105.00</td>
-                <td align="center">1</td>
-                <td align="right">$105.00</td>
-            </tr>
-            <tr>
-                <th>Final Fantasy XV - Game</th>
-                <td align="right">$130.00</td>
-                <td align="center">1</td>
-                <td align="right">$130.00</td>
-            </tr>
+            <?php $i = 1; ?>
+            <?php foreach($d->items as $c): ?>
+                <tr>
+                    <th scope="row"><?php echo $i; ?></th>
+                    <td><?php echo $c->concept; ?></td>
+                    <td align="right"><?php echo number_format($c->price,2); ?></td>
+                    <td align="center"><?php echo $c->quantity; ?></td>
+                    <td align="right"><?php echo number_format($c->total,2); ?></td>
+                </tr>
+                <?php $i++; ?>
+            <?php endforeach; ?>
         </tbody>
         <tfoot>
             <tr>
                 <td colspan="3"></td>
                 <td align="right">Subtotal $</td>
-                <td align="right">1635.00</td>
+                <td align="right"><?php echo number_format($d->subtotal,2); ?></td>
             </tr>
             <tr>
                 <td colspan="3"></td>
                 <td align="right">Impuesto $</td>
-                <td align="right">294.3</td>
+                <td align="right"><?php echo number_format($d->taxes,2); ?></td>
             </tr>
             <tr>
                 <td colspan="3"></td>
                 <td align="right">Envío $</td>
-                <td align="right">294.3</td>
+                <td align="right"><?php echo number_format($d->shipping,2); ?></td>
             </tr>
             <tr>
                 <td colspan="3"></td>
                 <td align="right">Total $</td>
-                <td align="right" class="gray"><h3 style="margin: 0px 0px;">1929.3</h3></td>
+                <td align="right" class="gray"><h3 style="margin: 0px 0px;"><?php echo number_format($d->total,2); ?></h3></td>
             </tr>
             <tr>
-                <td colspan="5" align="right">Todos los impuestos incluidos</td>
+                <td colspan="5" align="right"><?php echo sprintf('Impuestos del %s%% incluido (IVA).', TAXES_RATE) ?></td>
             </tr>
         </tfoot>
     </table>
