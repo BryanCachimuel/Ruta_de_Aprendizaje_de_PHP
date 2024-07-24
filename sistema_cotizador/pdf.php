@@ -14,14 +14,14 @@ if(empty($quotes)){
 
 // Buscar el match del folio que buscamos
 $number = trim($_GET['number']);
-foreach($quotes as $q){
-   if(sprintf(UPLOADS.'coty_%s.pdf',$number) ==$q){
-     // Descarga
-     header('Content-Type: application/pdf');
-     header(sprintf('Content-Disposition: attachment;filename=%s', pathinfo($q, PATHINFO_BASENAME)));
-     readfile($q);
-   }
+$file = sprintf(UPLOADS.'coty_%s.pdf',$number);
+
+if(!is_file($file)){
+    // No existe la cotización
+    redirect('index.php?error=not_found');
 }
 
-// No existe la cotización
-redirect('index.php?error=not_found');
+header('Content-Type: application/pdf');
+header(sprintf('Content-Disposition: attachment;filename=%s', pathinfo($file, PATHINFO_BASENAME)));
+readfile($file);
+
