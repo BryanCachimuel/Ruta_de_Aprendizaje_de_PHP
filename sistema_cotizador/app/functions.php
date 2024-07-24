@@ -1,6 +1,7 @@
 <?php
 
 use Dompdf\Dompdf;
+use PHPMailer\PHPMailer\PHPMailer;
 
 function get_view($view_name){
     $view = VIEWS.$view_name;
@@ -423,4 +424,35 @@ function get_all_quotes(){
 function redirect($route){
     header(sprintf('Location: %s', $route));
     exit;
+}
+
+// Enviar nuevo correo electrónico
+function send_email($data){
+    $mail = new PHPMailer();
+    $mail->setFrom(APP_EMAIL,APP_NAME);
+    $mail->addAddress('jslocal2@localhost.com','Lennin L');
+    $mail->Subject = $data['subject'];
+    $mail->msgHTML(get_module(MODULES.'email_template', $data));
+    $mail->AltBody = $data['alt_text'];
+    $mail->CharSet = 'UTF-8';
+    if(!$mail->send()){
+        return false;
+    }
+    return true;
+}
+
+function hook_send_quote(){
+    if(!isset($_POST['number'])){
+        json_output(json_build(403, null, 'Parámetros Incompletos'));
+    }
+
+    // Validar la existencia de la cotización
+    if(!is_file(sprintf(UPLOADS.'coty_%s.pdf', $number))){
+        json_output(json_build(400, null, 'La cotización no existe'));
+    }
+
+    // Guardar información para el correo
+    $body = '<h3>Nueva cotización</h3><br>Hola <b>%s</b>, has recibido una cotización con folio 
+             <b>%s<b/> por parte de <b>%s<b/>, se encuentra adjunta a este correo.';
+    $body = sprintf($body, $quote['name'], $number, APP_NAME);
 }
