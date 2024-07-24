@@ -27,12 +27,19 @@ $_SESSION['new_quote']['items'] = [
 ];
 
 // Prueba de PHPMailer
+$data = [
+    'subject' => 'Correo de Cotización',
+    'body' => '<h1>Cotización de Productos</h1>',
+    'alt_text' => 'Cotización alternativa'
+];
+
 $mail = new PHPMailer();
 $mail->setFrom('jslocal@localhost.com','Bryan L.C.L');
 $mail->addAddress('jslocal2@localhost.com','Lennin L');
-$mail->Subject = 'Cotización de Productos';
-$mail->msgHTML('<h1>Revisar la cotización</h1>');
-$mail->AltBody = 'Cotización en proceso de traspilación';
+$mail->Subject = $data['subject'];
+$mail->msgHTML(get_module(MODULES.'email_template', $data));
+$mail->AltBody = $data['alt_text'];
+$mail->CharSet = 'UTF-8';
 $mail->send();
 
 die;
