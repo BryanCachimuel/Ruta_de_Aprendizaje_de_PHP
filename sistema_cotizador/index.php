@@ -2,6 +2,8 @@
 
 require_once 'app/config.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+
 /* Insertar un concepto directamente en el array */
 $_SESSION['new_quote']['items'] = [
     [
@@ -23,6 +25,17 @@ $_SESSION['new_quote']['items'] = [
         'total' => (750.99 * 3) + ((TAXES_RATE / 100) * (750 * 3))
     ],
 ];
+
+// Prueba de PHPMailer
+$mail = new PHPMailer();
+$mail->setFrom('jslocal@localhost.com','Bryan L.C.L');
+$mail->addAddress('jslocal2@localhost.com','Lennin L');
+$mail->Subject = 'Cotización de Productos';
+$mail->msgHTML('<h1>Revisar la cotización</h1>');
+$mail->AltBody = 'Cotización en proceso de traspilación';
+$mail->send();
+
+die;
 
 /* Renderizado de la vista */
 get_view('index.php');
