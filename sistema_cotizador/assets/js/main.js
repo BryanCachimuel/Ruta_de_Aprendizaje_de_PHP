@@ -343,12 +343,14 @@ $("document").ready(() => {
         notify(res.msg);
         dowload.attr('href', res.data.url);
         dowload.fadeIn();
+        send.attr('data-number', res.data.number);
         send.fadeIn();
         button.html(new_text);
       }else{
         notify(res.msg, 'danger');
         dowload.attr('href', '');
         dowload.fadeOut();
+        send.attr('data-number', '');
         send.fadeOut();
         button.html('Reintentar');
       }
@@ -360,3 +362,48 @@ $("document").ready(() => {
     });
   } 
 });
+
+// Enviar por correo electrónico
+$('#send_quote').on('click', send_quote);
+function send_quote(e){
+  e.preventDefault();
+
+  let button = $(this),
+  default_text = button.html(),
+  next_text = button.data('number'),
+  action = 'send_quote';
+
+  // Validando la acción
+  if(!confirm('¿Estás Seguro?')) return false;
+
+  if(number === ''){
+    notify('El folio de cotización no es válido','danger');
+    return false;
+  }
+
+  // Petición
+  $.ajax({
+    url : 'ajax.php',
+    type: 'POST',
+    dataType : 'json',
+    cache : false,
+    data : {action, number},
+    beforeSend: () => {
+      $('body').waiMe();
+      button.html('Enviado...')
+    }
+  }).done(res => {
+    if(res.status === 200){
+      notify(res.msg);
+      button.html(new_text)
+    }else{
+      notify(res.msg, 'danger');
+      button.html('Reintentar');
+    }
+  }).fail(err => {
+    notify('Hubo un problema con la petición, intenta de nuevo','danger');
+    button.html(default_text);
+  }).always(() => {
+    $('body').waiMe('hide');
+  });
+}
