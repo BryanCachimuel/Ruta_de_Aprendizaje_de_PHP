@@ -419,4 +419,8 @@ function get_all_quotes(){
     return $quotes = glob(UPLOADS.'coty_*.pdf');
 }
 
-// Validar si existe el fallo dentro de la cotización
+// Redirección
+function redirect($route){
+    header(sprintf('Location: %s', $route));
+    exit;
+}
