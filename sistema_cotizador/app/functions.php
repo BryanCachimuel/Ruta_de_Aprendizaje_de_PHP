@@ -403,7 +403,7 @@ function hook_generate_quote(){
     $module = MODULES.'pdf_template';
     $html = get_module($module, $quote);
     $filename = 'coty_'.$quote['number'];
-    $download = URL.UPLOADS.$filename;
+    $download = sprintf(URL.'pdf.php?number=%s',$quote['number']);
     $quote['url'] = $download;
 
     // Generar pdf y guardar en servidor
@@ -412,3 +412,11 @@ function hook_generate_quote(){
     }
     json_output(json_build(200, $quote, 'Cotización generada con éxito'));
 }
+
+
+// Cargar todas las cotizaciones
+function get_all_quotes(){
+    return $quotes = glob(UPLOADS.'coty_*.pdf');
+}
+
+// Validar si existe el fallo dentro de la cotización
