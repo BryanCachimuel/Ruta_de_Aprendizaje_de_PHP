@@ -122,7 +122,11 @@ $("document").ready(() => {
   function restart_quote(e){
     e.preventDefault();
     let button = $(this),
-    action = 'restart_quote';
+    action = 'restart_quote',
+    dowload = $('#download_quote'),
+    send = $('#send_quote'),
+    generate = $('#generate_quote'),
+    default_text = 'Generar Cotización';
 
     if(!confirm('¿Estás Seguro?')) return false;
 
@@ -133,6 +137,11 @@ $("document").ready(() => {
       data : {action}
     }).done(res => {
       if(res.status === 200){
+        dowload.fadeOut();
+        dowload.attr('href','');
+        send.fadeOut();
+        send.attr('data-number');
+        generate.html(default_text);
         notify(res.msg);
         get_quote();
       }else{
