@@ -27,6 +27,7 @@ define('JS', URL . 'assets/js/');
 
 /* Para personalización */
 define('APP_NAME', 'Sistema Cotizador');
+define('APP_EMAIL','jslocal@localhost.com');
 define('TAXES_RATE', 16);
 define('SHIPPING', 99.50);
 
