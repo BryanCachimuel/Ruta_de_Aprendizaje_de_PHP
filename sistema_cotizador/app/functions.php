@@ -435,6 +435,14 @@ function send_email($data){
     $mail->msgHTML(get_module(MODULES.'email_template', $data));
     $mail->AltBody = $data['alt_text'];
     $mail->CharSet = 'UTF-8';
+    
+    // Adjuntos
+    if(!empty($data['attachments'])){
+        foreach($data['attachments'] as $file){
+            $mail->addAttachment($file);
+        }
+    }
+    
     if(!$mail->send()){
         return false;
     }
@@ -447,12 +455,29 @@ function hook_send_quote(){
     }
 
     // Validar la existencia de la cotización
-    if(!is_file(sprintf(UPLOADS.'coty_%s.pdf', $number))){
+    $file = sprintf(UPLOADS.'coty_%s.pdf', $number);
+    if(!is_file($file)){
         json_output(json_build(400, null, 'La cotización no existe'));
     }
 
     // Guardar información para el correo
-    $body = '<h3>Nueva cotización</h3><br>Hola <b>%s</b>, has recibido una cotización con folio 
-             <b>%s<b/> por parte de <b>%s<b/>, se encuentra adjunta a este correo.';
+    $body = '<h1>Nueva cotización</h1><br>Hola <b><p>%s</b>, has recibido una cotización con folio 
+             <b>%s<b/> por parte de <b>%s<b/>, se encuentra adjunta a este correo.</p>';
     $body = sprintf($body, $quote['name'], $number, APP_NAME);
+
+    $email_data = [
+        'subject' => sprintf('Cotización número %s reciba', $number),
+        'alt_text' => sprintf('Nueva cotización de %s recibida', APP_NAME),
+        'body' => $body,
+        'name' => $quote['name'],
+        'email' => $quote['email'],
+        'attachments' => [$file]
+    ];
+
+    // Generar pdf y guardar en servidor
+    if(!send_email($email_data)){
+        json_output(json_build(400, null, 'Hubo un problema al enviar el correo'));
+    }
+
+    json_output(json_build(200, $quote, 'Cotización enviada con exito'));
 }
