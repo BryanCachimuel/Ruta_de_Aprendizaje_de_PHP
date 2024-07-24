@@ -43,7 +43,7 @@ function recalculate_quote(){
     $items = [];
     $subtotal = 0;
     $taxes = 0;
-    $shipping = 0;
+    $shipping = SHIPPING;
     $total = 0;
 
     if(!isset($_SESSION['new_quote'])){
@@ -61,7 +61,6 @@ function recalculate_quote(){
         }
     }
 
-    $shipping = $_SESSION['new_quote']['shipping'];
     $total = $subtotal + $taxes + $shipping;
 
     $_SESSION['new_quote']['subtotal'] = $subtotal;
