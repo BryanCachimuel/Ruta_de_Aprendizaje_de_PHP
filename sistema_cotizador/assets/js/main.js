@@ -341,11 +341,13 @@ $("document").ready(() => {
     }).done(res => {
       if(res.status === 200){
         notify(res.msg);
+        dowload.attr('href', res.data.url);
         dowload.fadeIn();
         send.fadeIn();
         button.html(new_text);
       }else{
         notify(res.msg, 'danger');
+        dowload.attr('href', '');
         dowload.fadeOut();
         send.fadeOut();
         button.html('Reintentar');
